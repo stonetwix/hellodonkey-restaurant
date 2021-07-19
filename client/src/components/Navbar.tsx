@@ -36,7 +36,7 @@ export default Navigation;
 
 const navbarStyle: CSSProperties = {
     background: '#61c9a8',
-    height: '6rem',
+    height: '6.5rem',
     width: '100%',
 }
 
