@@ -1,9 +1,11 @@
 import { CSSProperties } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import leftSwirl from '../../assets/left-swirl.png';
 import rightSwirl from '../../assets/right-swirl.png';
 import guacamole from '../../assets/guacamole.png';
 import sidesIcon from '../../assets/sides-icon.png';
+import mainsIcon from '../../assets/mains-icon.png';
+import tacos from '../../assets/mains-menu.png';
 
 const MenuStart = () => {
     return (
@@ -54,8 +56,35 @@ const MenuStart = () => {
                         
                     </div>
                 </Col>
-                <Col sm={6} style={imgStyle}>
-    
+                <Col sm={6} style={imgSidesStyle}></Col>
+            </Row>
+            <Row style={{display: 'flex'}}>
+            <Col sm={6} style={imgMainsStyle}></Col>
+                <Col sm={6} style={mainsStyle}>
+                    <div style={{ width: '60%', marginTop: '4rem' }}>
+                        <img
+                            src={mainsIcon}
+                            alt='sidesIcon'
+                            style={{ float: 'left', marginRight: '1rem' }}
+                            width={'30px'}
+                        />
+                        <h2 style={{marginBottom: '2rem'}}>Mains</h2>
+                        <h4>Lorem ipsum</h4>
+                        <h5>99 kr</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
+                        <h4>Lorem ipsum</h4>
+                        <h5>99 kr</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
+                        <h4>Lorem ipsum</h4>
+                        <h5>99 kr</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
+                        <h4>Lorem ipsum</h4>
+                        <h5>99 kr</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
+                        <h4>Lorem ipsum</h4>
+                        <h5>99 kr</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
+                    </div>
                 </Col>
             </Row>
         </>
@@ -80,8 +109,25 @@ const sidesStyle: CSSProperties = {
     paddingBottom: '4rem'
 }
 
-const imgStyle: CSSProperties = {
+const mainsStyle: CSSProperties = {
+    background: '#FDE235',
+    display: 'flex',
+    justifyContent: 'center',
+    paddingBottom: '4rem'
+}
+
+const imgSidesStyle: CSSProperties = {
     backgroundImage: `url(${guacamole})`,
     paddingTop: '20rem',
     paddingBottom: '20rem',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+}
+
+const imgMainsStyle: CSSProperties = {
+    backgroundImage: `url(${tacos})`,
+    paddingTop: '20rem',
+    paddingBottom: '20rem',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
 }
