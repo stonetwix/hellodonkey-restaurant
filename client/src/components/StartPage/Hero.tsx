@@ -25,7 +25,7 @@ const imageStyle: CSSProperties = {
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center',
     width: '100%',
-    height: '60rem',
+    height: '100vh',
 }
 
 const headlineStyle: CSSProperties = {
