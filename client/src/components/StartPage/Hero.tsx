@@ -25,7 +25,7 @@ const imageStyle: CSSProperties = {
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center',
     width: '100%',
-    height: '60rem',
+    height: '100vh',
 }
 
 const headlineStyle: CSSProperties = {
@@ -35,20 +35,20 @@ const headlineStyle: CSSProperties = {
     alignItems: 'center',
     position: 'absolute',
     width: '100%',
-    height: '60rem'
+    height: '60rem',
 }
 
 const cursiveTextStyle: CSSProperties = {
     fontFamily: 'Berkshire Swash',
     color: '#F2545B',
-    fontSize: '10rem'
+    fontSize: '10rem',
 }
 
 const textStyle: CSSProperties = {
     fontFamily: 'Staatliches',
     color: '#F2545B',
     fontSize: '8rem',
-    marginTop: '-2rem'
+    marginTop: '-2rem',
 }
 
 //fontFamily: 'Nunito',
