@@ -113,14 +113,14 @@ const sidesStyle: CSSProperties = {
     background: '#603F8D',
     display: 'flex',
     justifyContent: 'center',
-    paddingBottom: '4rem'
+    paddingBottom: '5rem'
 }
 
 const mainsStyle: CSSProperties = {
     background: '#FDE235',
     display: 'flex',
     justifyContent: 'center',
-    paddingBottom: '4rem'
+    paddingBottom: '5rem'
 }
 
 const imgSidesStyle: CSSProperties = {
