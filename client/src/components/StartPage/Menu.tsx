@@ -1,30 +1,61 @@
-import { Col, Row } from 'antd';
 import { CSSProperties } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import leftSwirl from '../../assets/left-swirl.png';
 import rightSwirl from '../../assets/right-swirl.png';
+import guacamole from '../../assets/guacamole.png';
+import sidesIcon from '../../assets/sides-icon.png';
 
 const MenuStart = () => {
     return (
         <>
             <Row style={headlineRowStyle}>
-                <img
-                    src={leftSwirl} 
-                    alt='left swirl'
-                    width={'50px'}
-                /> 
-                <h1 style={{ marginLeft: '1rem', marginRight: '1rem', marginTop: '0.5rem' }}>Menu</h1>
-                <img
-                    src={rightSwirl} 
-                    alt='right swirl'
-                    width={'50px'}
-                /> 
-            </Row>
-            <Row>
-                <Col span={12} style={sidesStyle}>
-                    <h2>Sides</h2>
+                <Col xs='auto'>
+                    <img
+                        src={leftSwirl} 
+                        alt='left swirl'
+                        width={'50px'}
+                        style={{display: 'inline'}}
+                    /> 
                 </Col>
-                <Col span={12}>
-                    <h2>Image</h2>
+                <Col md='auto'>
+                    <h1 style={{ marginTop: '0.5rem' }}>Menu</h1>
+                </Col>
+                <Col xs='auto'>
+                    <img
+                        src={rightSwirl} 
+                        alt='right swirl'
+                        width={'50px'}
+                        style={{float: 'right'}}
+                    /> 
+                </Col>
+            </Row>
+            <Row style={{display: 'flex'}}>
+                <Col sm={6} style={sidesStyle}>
+                    <div style={{ width: '60%', marginTop: '4rem' }}>
+                        <img
+                            src={sidesIcon}
+                            alt='sidesIcon'
+                            style={{ float: 'left', marginRight: '1rem' }}
+                            width={'30px'}
+                        />
+                        <h2 style={{color: 'white', marginBottom: '2rem'}}>Sides</h2>
+                        <h4 style={{color: 'white'}}>Lorem ipsum</h4>
+                        <h5 style={{color: 'white'}}>99 kr</h5>
+                        <p style={{color: 'white'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
+                        <h4 style={{color: 'white'}}>Lorem ipsum</h4>
+                        <h5 style={{color: 'white'}}>99 kr</h5>
+                        <p style={{color: 'white'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
+                        <h4 style={{color: 'white'}}>Lorem ipsum</h4>
+                        <h5 style={{color: 'white'}}>99 kr</h5>
+                        <p style={{color: 'white'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
+                        <h4 style={{color: 'white'}}>Lorem ipsum</h4>
+                        <h5 style={{color: 'white'}}>99 kr</h5>
+                        <p style={{color: 'white'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
+                        
+                    </div>
+                </Col>
+                <Col sm={6} style={imgStyle}>
+    
                 </Col>
             </Row>
         </>
@@ -44,4 +75,13 @@ const headlineRowStyle: CSSProperties = {
 
 const sidesStyle: CSSProperties = {
     background: '#61C9A8',
+    display: 'flex',
+    justifyContent: 'center',
+    paddingBottom: '4rem'
+}
+
+const imgStyle: CSSProperties = {
+    backgroundImage: `url(${guacamole})`,
+    paddingTop: '20rem',
+    paddingBottom: '20rem',
 }
