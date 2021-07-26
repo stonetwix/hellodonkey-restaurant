@@ -15,7 +15,7 @@ const Navigation = () => {
                         height={window.innerWidth > 786 ? '65%' : '40%'}
                     />
                 </Navbar.Brand>
-                <Navbar.Toggle area-aria-controls='responsive-navbar-nav' style={{ background: '#61c9a8'}}/>
+                <Navbar.Toggle area-aria-controls='responsive-navbar-nav' style={{ background: '#61c9a8' }}/>
                 <Navbar.Collapse id='responsive-navbar-nav' style={containerStyle}>
                     <Nav style={navStyle}>
                         <Nav.Link href='/' style={navItemStyle}>Book a table</Nav.Link>
@@ -44,7 +44,7 @@ const containerStyle: CSSProperties = {
     justifyContent: 'flex-end',
     alignItems: 'center',
     background: '#61c9a8',
-    width: '100%'
+    width: '100%',
 }
 
 const navStyle: CSSProperties = {
@@ -52,9 +52,10 @@ const navStyle: CSSProperties = {
 }
 
 const brandStyle: CSSProperties = {
-    float: 'left'
+    float: 'left',
 }
 
 const navItemStyle: CSSProperties = {
     marginRight: '1rem',
+    color: 'white',
 }
