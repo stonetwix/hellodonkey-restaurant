@@ -1,23 +1,24 @@
 import React, { CSSProperties } from 'react';
 import { Steps, Button, message } from 'antd';
+import DateTime from './DateTime';
 
 const { Step } = Steps;
 
 const steps = [
     {
-        title: 'First',
-        content: 'First-content',
+        title: 'Antal/datum',
+        content: <DateTime />,
     },
     {
-        title: 'Second',
+        title: 'Din information',
         content: 'Second-content',
     },
     {
-        title: 'Third',
+        title: 'Summering',
         content: 'Third-content',
     },
     {
-        title: 'Last',
+        title: 'Klart!',
         content: 'Last-content',
     },
 ];
