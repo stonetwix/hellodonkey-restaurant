@@ -55,3 +55,15 @@ p {
   color: #603F8D;
   border-color: #603F8D; 
 }
+
+.ant-input-number:hover, .ant-input-number:focus, .ant-input-number-focused {
+  border-color: #603F8D; 
+}
+
+.ant-picker-focused, .ant-picker:hover, .ant-picker:focus {
+  border-color: #603F8D;
+}
+
+.ant-input-focused, .ant-input:hover, .ant-input:focus {
+  border-color: #603F8D;
+}
