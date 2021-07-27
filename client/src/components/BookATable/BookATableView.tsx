@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
 import { Steps, Button, message } from 'antd';
 import DateTime from './DateTime';
+import ContactInformation from './ContactInformation';
 
 const { Step } = Steps;
 
@@ -11,14 +12,14 @@ const steps = [
     },
     {
         title: 'Din information',
-        content: 'Second-content',
+        content: <ContactInformation />,
     },
     {
         title: 'Summering',
         content: 'Third-content',
     },
     {
-        title: 'Klart!',
+        title: 'Bekräfta',
         content: 'Last-content',
     },
 ];
@@ -63,11 +64,10 @@ const BookATable = () => {
     );
 };
 
-
 export default BookATable;
 
 const stepsStyle: CSSProperties = {
-    marginTop: '10rem',
+    marginTop: '14rem',
     width: '80%',
     marginLeft: '10%',
 }
@@ -81,6 +81,7 @@ const contentStyle: CSSProperties = {
 
 const buttonsStyle: CSSProperties = {
     marginTop: '5rem',
+    marginBottom: '10rem',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
