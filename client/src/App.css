@@ -20,6 +20,16 @@ p {
   color: #474747;
 }
 
+.ant-steps-item-title {
+  font-family: 'Nunito';
+  font-weight: 500;
+}
+
+.ant-form-item-label {
+  font-family: 'Nunito';
+  font-weight: 500;
+}
+
 .ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-icon {
   background: #603F8D;
 }
@@ -43,6 +53,13 @@ p {
 .ant-btn-primary {
   background: #603F8D;
   border-color: #603F8D;
+  font-family: 'Nunito';
+  font-weight: 700;
+}
+
+.ant-btn {
+  font-family: 'Nunito';
+  font-weight: 700;
 }
 
 .ant-btn-primary:hover, .ant-btn-primary:focus {
