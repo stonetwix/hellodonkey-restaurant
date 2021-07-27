@@ -19,3 +19,39 @@ p {
   font-weight: 500;
   color: #474747;
 }
+
+.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-icon {
+  background: #603F8D;
+}
+
+.ant-steps-item-process .ant-steps-item-icon {
+  border-color: #603F8D;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon {
+  border-color: #603F8D;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
+  color: #603F8D;
+}
+
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title::after {
+  background-color: #603F8D;
+}
+
+.ant-btn-primary {
+  background: #603F8D;
+  border-color: #603F8D;
+}
+
+.ant-btn-primary:hover, .ant-btn-primary:focus {
+  background: #603F8D;
+  border-color: #603F8D;
+  color: white !important;
+}
+
+.ant-btn:hover, .ant-btn:focus {
+  color: #603F8D;
+  border-color: #603F8D; 
+}
