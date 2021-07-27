@@ -17,10 +17,9 @@ const Footer = () => {
                     <p style={textStyle}>Tis-fre: 16.00-20.30<br/>
                     Lör: 16-22.30<br/>
                     Sön: 14-18</p>
-
                 </Col>
                 <Col md={4}>
-                    <h2 style={{...textStyle, textDecoration: 'underline'}}>Boka bord här!</h2>
+                    <h2 style={{ ...textStyle, textDecoration: 'underline' }}>Boka bord här!</h2>
                     <InstagramFilled style={iconStyle}/>
                     <FacebookFilled style={iconStyle}/>
                     <LinkedinFilled style={iconStyle}/>

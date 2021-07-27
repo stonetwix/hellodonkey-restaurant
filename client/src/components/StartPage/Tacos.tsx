@@ -25,7 +25,7 @@ const Tacos = () => {
                     />
                     <h5>Hos oss njuter du av genuin mexikansk mat 
                     i en avslappnad miljö. På menyn hittar du tacos, quesadillas, tostadas och mycket 
-                    annat gott. Vi har också stans bästa drinkar! Vårt gemensamma mål är att vara Göteborgs mexikanska mecka när det kommer till mat och dryck. Vi vill att du som gäst ska känna den där genuina, varma mexikanska känslan när du kliver innanför vår dörr!</h5>
+                    annat gott. Vi har också stans bästa drinkar! Vårt mål är att vara Göteborgs mexikanska mecka när det kommer till mat och dryck. Vi vill att du som gäst ska känna den där genuina, varma mexikanska känslan när du kliver innanför vår dörr. Varmt välkomna!</h5>
                 </Col>
             </Row>
         </div>
