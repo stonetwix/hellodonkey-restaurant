@@ -23,7 +23,7 @@ const Navigation = () => {
                         <Nav.Link href='/' style={navItemStyle}>Leftovers</Nav.Link>
                         <Nav.Link href='/' style={navItemStyle}>About us</Nav.Link>
                         <Nav.Link href='/' style={navItemStyle}>Contact</Nav.Link>
-                        <Nav.Link href='/' style={navItemStyle}>Login</Nav.Link>
+                        <Nav.Link href='/login' style={navItemStyle}>Login</Nav.Link>
                         <Nav.Link href='/' style={navItemStyle}><ShoppingCartOutlined style={{ fontSize: '1.5rem' }}/></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

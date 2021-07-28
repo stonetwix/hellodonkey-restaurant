@@ -5,6 +5,16 @@ import ContactInformation from './ContactInformation';
 import Summary from './Summary';
 import BookingSuccess from './BookingSuccess';
 
+export interface BookingInfo {
+    numberOfGuests: number;
+    date: string;
+    time: string;
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+}
+
 const { Step } = Steps;
 
 const steps = [
