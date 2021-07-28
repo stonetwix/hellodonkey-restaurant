@@ -19,11 +19,10 @@ const Navigation = () => {
                 <Navbar.Collapse id='responsive-navbar-nav' style={containerStyle}>
                     <Nav style={navStyle}>
                         <Nav.Link href='/bookatable' style={navItemStyle}>Book a table</Nav.Link>
-                        <Nav.Link href='/' style={navItemStyle}>Take away</Nav.Link>
+                        <Nav.Link href='/takeaway' style={navItemStyle}>Take away</Nav.Link>
                         <Nav.Link href='/' style={navItemStyle}>Leftovers</Nav.Link>
                         <Nav.Link href='/' style={navItemStyle}>About us</Nav.Link>
                         <Nav.Link href='/' style={navItemStyle}>Contact</Nav.Link>
-                        <Nav.Link href='/login' style={navItemStyle}>Login</Nav.Link>
                         <Nav.Link href='/' style={navItemStyle}><ShoppingCartOutlined style={{ fontSize: '1.5rem' }}/></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
