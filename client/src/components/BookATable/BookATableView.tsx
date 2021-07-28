@@ -2,6 +2,8 @@ import React, { CSSProperties } from 'react';
 import { Steps, Button, message, Row, Col } from 'antd';
 import DateTime from './DateTime';
 import ContactInformation from './ContactInformation';
+import Summary from './Summary';
+import BookingSuccess from './BookingSuccess';
 
 const { Step } = Steps;
 
@@ -16,11 +18,11 @@ const steps = [
     },
     {
         title: 'Summering',
-        content: 'Third-content',
+        content: <Summary />,
     },
     {
-        title: 'Bekräfta',
-        content: 'Last-content',
+        title: 'Klart!',
+        content: <BookingSuccess />,
     },
 ];
 

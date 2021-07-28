@@ -86,3 +86,17 @@ p {
 .ant-input-focused, .ant-input:hover, .ant-input:focus {
   border-color: #603F8D;
 }
+
+.ant-result-success .ant-result-icon > .anticon {
+  color: #61c9a8;
+}
+
+.ant-result-title {
+  font-family: 'Nunito';
+  font-weight: 700;
+}
+
+.ant-result-subtitle {
+  font-family: 'Nunito';
+  font-weight: 400;
+}
