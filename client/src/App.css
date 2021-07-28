@@ -100,3 +100,7 @@ p {
   font-family: 'Nunito';
   font-weight: 400;
 }
+
+::selection {
+  background: #61c9a8;
+}
