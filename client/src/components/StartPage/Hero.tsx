@@ -48,7 +48,7 @@ const textStyle: CSSProperties = {
     fontFamily: 'Staatliches',
     color: '#F2545B',
     fontSize: '8rem',
-    marginTop: '-2rem',
+    marginTop: '-5rem',
 }
 
 //fontFamily: 'Nunito',

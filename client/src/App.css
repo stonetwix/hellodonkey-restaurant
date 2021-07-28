@@ -55,11 +55,13 @@ p {
   border-color: #603F8D;
   font-family: 'Nunito';
   font-weight: 700;
+  color: white !important;
 }
 
 .ant-btn {
   font-family: 'Nunito';
   font-weight: 700;
+  color: #603F8D;
 }
 
 .ant-btn-primary:hover, .ant-btn-primary:focus {

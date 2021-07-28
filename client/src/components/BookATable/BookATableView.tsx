@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react';
-import { Steps, Button, message } from 'antd';
+import { Steps, Button, message, Row, Col } from 'antd';
 import DateTime from './DateTime';
 import ContactInformation from './ContactInformation';
 
@@ -37,6 +37,11 @@ const BookATable = () => {
 
     return (
         <>
+            <Row style={headlineContainerStyle}>
+                <Col span={24} style={headlineColumnStyle}>
+                    <h1>Book a table</h1>
+                </Col>    
+            </Row>
             <Steps current={current} style={stepsStyle}>
                 {steps.map(item => (
                 <Step key={item.title} title={item.title} />
@@ -67,7 +72,7 @@ const BookATable = () => {
 export default BookATable;
 
 const stepsStyle: CSSProperties = {
-    marginTop: '14rem',
+    marginTop: '5rem',
     width: '80%',
     marginLeft: '10%',
 }
@@ -85,4 +90,13 @@ const buttonsStyle: CSSProperties = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
+}
+
+const headlineContainerStyle: CSSProperties = {
+    marginTop: '12rem',
+}
+
+const headlineColumnStyle: CSSProperties = {
+    display: 'flex',
+    justifyContent: 'center',
 }

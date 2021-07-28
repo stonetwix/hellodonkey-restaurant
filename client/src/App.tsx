@@ -11,13 +11,13 @@ function App() {
     <>
       <Router>
         <ScrollToTop />
-          <Navigation />
-          <Switch>
-            <Route exact path='/' component={StartPageView}/>
-            <Route path='/bookatable' component={BookATable}/>
-          </Switch>
+        <Navigation />
+        <Switch>
+          <Route exact path='/' component={StartPageView}/>
+          <Route path='/bookatable' component={BookATable}/>
+        </Switch>
+        <Footer />
       </Router>
-      <Footer />
     </>
   );
 }

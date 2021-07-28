@@ -49,6 +49,7 @@ const containerStyle: CSSProperties = {
 
 const navStyle: CSSProperties = {
     fontFamily: 'Staatliches',
+    fontSize: '1rem'
 }
 
 const brandStyle: CSSProperties = {
