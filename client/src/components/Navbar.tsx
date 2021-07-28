@@ -2,6 +2,7 @@ import { CSSProperties } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import logo from '../assets/logo-hd-white.png';
 import { ShoppingCartOutlined } from '@ant-design/icons'; 
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
     return (
@@ -18,12 +19,12 @@ const Navigation = () => {
                 <Navbar.Toggle area-aria-controls='responsive-navbar-nav' style={{ background: '#61c9a8' }}/>
                 <Navbar.Collapse id='responsive-navbar-nav' style={containerStyle}>
                     <Nav style={navStyle}>
-                        <Nav.Link href='/bookatable' style={navItemStyle}>Book a table</Nav.Link>
-                        <Nav.Link href='/takeaway' style={navItemStyle}>Take away</Nav.Link>
-                        <Nav.Link href='/' style={navItemStyle}>Leftovers</Nav.Link>
-                        <Nav.Link href='/' style={navItemStyle}>About us</Nav.Link>
-                        <Nav.Link href='/' style={navItemStyle}>Contact</Nav.Link>
-                        <Nav.Link href='/' style={navItemStyle}><ShoppingCartOutlined style={{ fontSize: '1.5rem' }}/></Nav.Link>
+                        <Link to='/bookatable' style={navItemStyle}>Book a table</Link>
+                        <Link to='/takeaway' style={navItemStyle}>Take away</Link>
+                        <Link to='/' style={navItemStyle}>Leftovers</Link>
+                        <Link to='/' style={navItemStyle}>About us</Link>
+                        <Link to='/' style={navItemStyle}>Contact</Link>
+                        <Link to='/' style={navItemStyle}><ShoppingCartOutlined style={{ fontSize: '1.5rem' }}/></Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
@@ -56,6 +57,6 @@ const brandStyle: CSSProperties = {
 }
 
 const navItemStyle: CSSProperties = {
-    marginRight: '1rem',
+    marginRight: '1.5rem',
     color: 'white',
 }
