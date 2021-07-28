@@ -3,6 +3,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import logo from '../assets/logo-hd-white.png';
 import { ShoppingCartOutlined } from '@ant-design/icons'; 
 import { Link } from 'react-router-dom';
+import BadgeCart from './Cart/Badge';
 
 const Navigation = () => {
     return (
@@ -24,7 +25,10 @@ const Navigation = () => {
                         <Link to='/' style={navItemStyle}>Leftovers</Link>
                         <Link to='/' style={navItemStyle}>About us</Link>
                         <Link to='/' style={navItemStyle}>Contact</Link>
-                        <Link to='/' style={navItemStyle}><ShoppingCartOutlined style={{ fontSize: '1.5rem' }}/></Link>
+                        <Link to='/' style={{ color: 'white' }}>
+                            <ShoppingCartOutlined style={{ fontSize: '1.5rem', marginRight: '-0.3rem' }}/>
+                        </Link>
+                        <BadgeCart />
                     </Nav>
                 </Navbar.Collapse>
             </Container>
@@ -42,7 +46,6 @@ const navbarStyle: CSSProperties = {
 
 const containerStyle: CSSProperties = {
     justifyContent: 'flex-end',
-    alignItems: 'center',
     background: '#61c9a8',
     width: '100%',
 }
