@@ -22,7 +22,7 @@ const Navigation = () => {
                     <Nav style={navStyle}>
                         <Link to='/bookatable' style={navItemStyle}>Book a table</Link>
                         <Link to='/takeaway' style={navItemStyle}>Take away</Link>
-                        <Link to='/' style={navItemStyle}>Leftovers</Link>
+                        <Link to='/leftovers' style={navItemStyle}>Leftovers</Link>
                         <Link to='/' style={navItemStyle}>About us</Link>
                         <Link to='/' style={navItemStyle}>Contact</Link>
                         <Link to='/' style={{ color: 'white' }}>
