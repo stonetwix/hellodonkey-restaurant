@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Navigation from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 import StartPageView from "./components/StartPage/StartPageView";
+import TakeAway from "./components/Takeaway/TakeawayView";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path='/' component={StartPageView}/>
           <Route path='/bookatable' component={BookATable}/>
           <Route path='/login' component={LogInView}/>
+          <Route path='/takeaway' component={TakeAway}/>
         </Switch>
         <Footer />
       </Router>

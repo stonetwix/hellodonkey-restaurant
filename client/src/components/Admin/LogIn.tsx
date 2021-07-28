@@ -103,6 +103,7 @@ const containerStyle: CSSProperties = {
     display: "flex",
     width: "60%",
     margin: "auto",
+    height: '100vh',
 };
   
 const columnStyle: CSSProperties = {
