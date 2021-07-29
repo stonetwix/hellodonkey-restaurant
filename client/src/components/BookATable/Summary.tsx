@@ -2,9 +2,18 @@ import { Button, Card, Col, Row } from 'antd';
 import React, { ContextType } from 'react';
 import { BookingContext } from '../../contexts/BookingContext';
 
-class Summary extends React.Component {
+interface Props {
+    next(): void;
+}
+
+class Summary extends React.Component<Props> {
     context!: ContextType<typeof BookingContext>
     static contextType = BookingContext;
+
+    onFinish = () => {
+        console.log('Bokat!')
+        this.props.next();
+    }
 
     render() {
         return(
@@ -23,7 +32,7 @@ class Summary extends React.Component {
                                     <p>Telefon: {contactInfo?.phone} </p>
                                     <p>Meddelande: {contactInfo?.message} </p>
                                 </Card>
-                                <Button type="primary" style={{ marginTop: '2rem' }}>Boka nu!</Button>
+                                <Button type="primary" onClick={this.onFinish} style={{ marginTop: '2rem', marginBottom: '10rem' }}>Boka nu!</Button>
                             </Col>
                         </Row>
                     );

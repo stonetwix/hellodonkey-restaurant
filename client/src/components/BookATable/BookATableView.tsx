@@ -30,7 +30,7 @@ const BookATable = () => {
         },
         {
             title: 'Summering',
-            content: <Summary />,
+            content: <Summary next={next}/>,
         },
         {
             title: 'Klart!',

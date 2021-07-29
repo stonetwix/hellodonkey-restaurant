@@ -59,13 +59,13 @@ class DateTime extends React.Component<Props> {
                     style={{ marginBottom: '10rem' }}
                 >
                     <Form.Item name={['user', 'number']} label="Antal" rules={[{ required: true }]}>
-                        <InputNumber defaultValue={2} />
+                        <InputNumber />
                     </Form.Item>
                     <Form.Item name={['user', 'date']} label="Datum" rules={[{ required: true }]}>
                         <DatePicker />
                     </Form.Item>            
                     <Form.Item name={['user', 'time']} label="Tid" rules={[{ required: true }]}>
-                        <TimePicker format='HH:mm' defaultValue={moment('18:00', 'HH:mm')} minuteStep={30} showNow={false} />
+                        <TimePicker format='HH:mm' minuteStep={30} showNow={false} />
                     </Form.Item>
                     <Form.Item>
                         <Button type="primary" htmlType="submit">

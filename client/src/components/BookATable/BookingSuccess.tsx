@@ -1,4 +1,4 @@
-import { Result, Button } from 'antd';
+import { Result } from 'antd';
 import React from 'react';
 
 class BookingSuccess extends React.Component {
@@ -9,12 +9,7 @@ class BookingSuccess extends React.Component {
                 status="success"
                 title="Tack för din bokning och välkommen till Hello Donkey!"
                 subTitle="Ditt bokningsnummer är: 738456837585328"
-                // extra={[
-                // <Button type="primary" key="console">
-                //     Go Console
-                // </Button>,
-                // <Button key="buy">Buy Again</Button>,
-                // ]}
+                style={{ marginBottom: '10rem' }}
             />
         )
     }
