@@ -1,40 +1,10 @@
 import React, { CSSProperties } from 'react';
-import { Steps, Button, message, Row, Col } from 'antd';
-import DateTime from './DateTime';
+import { Steps, Row, Col } from 'antd';
+import DateTime, { DateTimeInfo } from './DateTime';
 import ContactInformation from './ContactInformation';
 import Summary from './Summary';
 import BookingSuccess from './BookingSuccess';
 
-export interface BookingInfo {
-    numberOfGuests: number;
-    date: string;
-    time: string;
-    name: string;
-    email: string;
-    phone: string;
-    message: string;
-}
-
-const { Step } = Steps;
-
-const steps = [
-    {
-        title: 'Antal/datum',
-        content: <DateTime />,
-    },
-    {
-        title: 'Din information',
-        content: <ContactInformation />,
-    },
-    {
-        title: 'Summering',
-        content: <Summary />,
-    },
-    {
-        title: 'Klart!',
-        content: <BookingSuccess />,
-    },
-];
 
 const BookATable = () => {
     const [current, setCurrent] = React.useState(0);
@@ -47,9 +17,30 @@ const BookATable = () => {
         setCurrent(current - 1);
     };
 
+    const { Step } = Steps;
+
+    const steps = [
+        {
+            title: 'Antal/datum',
+            content: <DateTime next={next}/>,
+        },
+        {
+            title: 'Din information',
+            content: <ContactInformation next={next}/>,
+        },
+        {
+            title: 'Summering',
+            content: <Summary next={next}/>,
+        },
+        {
+            title: 'Klart!',
+            content: <BookingSuccess />,
+        },
+    ];
+
     return (
-        <>
-            <Row style={headlineContainerStyle}>
+        <div style={{ height: '100vh' }}>
+            <Row style={headlineStyle}>
                 <Col span={24} style={headlineColumnStyle}>
                     <h1>Book a table</h1>
                 </Col>    
@@ -60,24 +51,7 @@ const BookATable = () => {
                 ))}
             </Steps>
             <div className="steps-content" style={contentStyle}>{steps[current].content}</div>
-            <div className="steps-action" style={buttonsStyle}>
-                {current < steps.length - 1 && (
-                <Button type="primary" style={{ margin: '3rem 1rem' }} onClick={() => next()}>
-                    Next
-                </Button>
-                )}
-                {current === steps.length - 1 && (
-                <Button type="primary" style={{ margin: '3rem 1rem' }} onClick={() => message.success('Processing complete!')}>
-                    Done
-                </Button>
-                )}
-                {current > 0 && (
-                <Button style={{ margin: '3rem 1rem' }} onClick={() => prev()}>
-                    Previous
-                </Button>
-                )}
-            </div>
-        </>
+        </div>
     );
 };
 
@@ -96,19 +70,18 @@ const contentStyle: CSSProperties = {
     alignItems: 'center'
 }
 
-const buttonsStyle: CSSProperties = {
-    marginTop: '5rem',
-    marginBottom: '10rem',
+const headlineStyle: CSSProperties = {
+    marginTop: '6.5rem',
+    marginBottom: '2rem',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
-}
-
-const headlineContainerStyle: CSSProperties = {
-    marginTop: '12rem',
+    padding: '2rem 0',
+    background: '#eee',
 }
 
 const headlineColumnStyle: CSSProperties = {
     display: 'flex',
     justifyContent: 'center',
+    marginTop: '3.5rem',
+    marginBottom: '2rem',
 }
