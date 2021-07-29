@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react';
-import { Steps, Button, message, Row, Col } from 'antd';
+import { Steps, Row, Col } from 'antd';
 import DateTime, { DateTimeInfo } from './DateTime';
 import ContactInformation from './ContactInformation';
 import Summary from './Summary';
@@ -40,7 +40,7 @@ const BookATable = () => {
 
     return (
         <div style={{ height: '100vh' }}>
-            <Row style={headlineContainerStyle}>
+            <Row style={headlineStyle}>
                 <Col span={24} style={headlineColumnStyle}>
                     <h1>Book a table</h1>
                 </Col>    
@@ -70,11 +70,18 @@ const contentStyle: CSSProperties = {
     alignItems: 'center'
 }
 
-const headlineContainerStyle: CSSProperties = {
-    marginTop: '12rem',
+const headlineStyle: CSSProperties = {
+    marginTop: '6.5rem',
+    marginBottom: '2rem',
+    display: 'flex',
+    justifyContent: 'center',
+    padding: '2rem 0',
+    background: '#eee',
 }
 
 const headlineColumnStyle: CSSProperties = {
     display: 'flex',
     justifyContent: 'center',
+    marginTop: '3.5rem',
+    marginBottom: '2rem',
 }
