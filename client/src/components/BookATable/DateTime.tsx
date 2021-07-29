@@ -63,6 +63,7 @@ class DateTime extends React.Component<Props> {
                                 initialValues={{
                                     user: {
                                     number: dateTimeInfo?.numberOfPeople,
+                                    date: moment(),
                                     }
                                 }}
                             >
