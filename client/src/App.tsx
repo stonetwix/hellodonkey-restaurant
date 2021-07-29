@@ -8,10 +8,12 @@ import Navigation from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 import StartPageView from "./components/StartPage/StartPageView";
 import TakeAway from "./components/Takeaway/TakeawayView";
+import BookingProvider from "./contexts/BookingContext";
 
 function App() {
   return (
     <>
+    <BookingProvider>
       <Router>
         <ScrollToTop />
         <Navigation />
@@ -24,6 +26,7 @@ function App() {
         </Switch>
         <Footer />
       </Router>
+    </BookingProvider>
     </>
   );
 }
