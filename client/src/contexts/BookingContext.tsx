@@ -44,6 +44,7 @@ class BookingProvider extends Component<{}, State> {
         return (
             <BookingContext.Provider value={{
                 dateTimeInfo: this.state.dateTimeInfo,
+                contactInfo: this.state.contactInfo,
                 updateDateTimeInfo: this.updateDateTimeInfo,
                 updateContactInfo: this.updateContactInfo,
             }}>
