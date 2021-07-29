@@ -64,6 +64,7 @@ class DateTime extends React.Component<Props> {
                                     user: {
                                     number: dateTimeInfo?.numberOfPeople,
                                     date: moment(),
+                                    time: moment().minutes(Math.round(moment().minute() / 30) * 30),
                                     }
                                 }}
                             >
@@ -74,7 +75,7 @@ class DateTime extends React.Component<Props> {
                                     <DatePicker />
                                 </Form.Item>            
                                 <Form.Item name={['user', 'time']} label="Tid" rules={[{ required: true }]}>
-                                    <TimePicker format='HH:mm' minuteStep={30} showNow={false} />
+                                    <TimePicker format='HH:mm' minuteStep={30} showNow={false} disabledHours={() => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 21, 22, 23]}/>
                                 </Form.Item>
                                 <Form.Item>
                                     <Button type="primary" htmlType="submit">
