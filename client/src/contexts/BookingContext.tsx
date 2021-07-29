@@ -1,22 +1,27 @@
 import { Component, createContext } from 'react';
+import { ContactInfo } from '../components/BookATable/ContactInformation';
 import { DateTimeInfo } from '../components/BookATable/DateTime';
 
 interface State {
     dateTimeInfo?: DateTimeInfo;
+    contactInfo?: ContactInfo;
 }
 
 interface ContextValue extends State {   
     updateDateTimeInfo: (dateTimeInfo: DateTimeInfo) => void;
+    updateContactInfo: (contactInfo: ContactInfo) => void;
 }
 
 export const BookingContext = createContext<ContextValue>({
     dateTimeInfo: undefined,
     updateDateTimeInfo: () => {},
+    updateContactInfo: () => {},
 });
 
 class BookingProvider extends Component<{}, State> {
     state: State = {
         dateTimeInfo: undefined,
+        contactInfo: undefined,
     }
 
     // componentDidMount() {
@@ -27,14 +32,20 @@ class BookingProvider extends Component<{}, State> {
 
     updateDateTimeInfo = (dateTimeInfo: DateTimeInfo) => {
         this.setState({ dateTimeInfo: dateTimeInfo });
-        console.log('context: ', this.state.dateTimeInfo)
+        console.log('context, date: ', this.state.dateTimeInfo)
     }
 
+    updateContactInfo = (contactInfo: ContactInfo) => {
+        this.setState({ contactInfo: contactInfo });
+        console.log('context, contact: ', this.state.contactInfo)
+    }
+    
     render() {
         return (
             <BookingContext.Provider value={{
                 dateTimeInfo: this.state.dateTimeInfo,
                 updateDateTimeInfo: this.updateDateTimeInfo,
+                updateContactInfo: this.updateContactInfo,
             }}>
                 {this.props.children}
             </BookingContext.Provider>

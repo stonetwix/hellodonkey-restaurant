@@ -5,14 +5,6 @@ import ContactInformation from './ContactInformation';
 import Summary from './Summary';
 import BookingSuccess from './BookingSuccess';
 
-export interface BookingInfo {
-    dateTimeInfo: DateTimeInfo;
-    name: string;
-    email: string;
-    phone: string;
-    message: string;
-}
-
 
 const BookATable = () => {
     const [current, setCurrent] = React.useState(0);
@@ -34,7 +26,7 @@ const BookATable = () => {
         },
         {
             title: 'Din information',
-            content: <ContactInformation />,
+            content: <ContactInformation next={next}/>,
         },
         {
             title: 'Summering',

@@ -1,5 +1,6 @@
-import React, { CSSProperties } from 'react';
-import { Form, Input } from 'antd';
+import React, { ContextType, CSSProperties } from 'react';
+import { Button, Form, Input } from 'antd';
+import { BookingContext } from '../../contexts/BookingContext';
 
 const layout = {
     labelCol: { span: 3 },
@@ -19,17 +20,41 @@ const validateMessages = {
 };
 /* eslint-enable no-template-curly-in-string */
 
+export interface ContactInfo {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+}
+interface Props {
+    next(): void;
+}
 
-class ContactInformation extends React.Component {
+class ContactInformation extends React.Component<Props> {
+    context!: ContextType<typeof BookingContext>
+    static contextType = BookingContext;
 
     onFinish = (values: any) => {
-        console.log(values);
+        const contactInfo: ContactInfo= {
+            name: values.user.name,
+            email: values.user.email,
+            phone: values.user.phone,
+            message: values.user.message,
+
+        };
+        const { updateContactInfo } = this.context;
+        updateContactInfo(contactInfo);
+        this.props.next();
     };
 
     render() {
         return (
             <div style={containerStyle}>
-                <Form {...layout} name="nest-messages" onFinish={this.onFinish} validateMessages={validateMessages}>
+                <Form 
+                    {...layout} 
+                    name="nest-messages" 
+                    onFinish={this.onFinish} 
+                    validateMessages={validateMessages}>
                     <Form.Item name={['user', 'name']} label="Namn" rules={[{ required: true }]}>
                         <Input />
                     </Form.Item>
@@ -39,8 +64,13 @@ class ContactInformation extends React.Component {
                     <Form.Item name={['user', 'phone']} label="Telefon" rules={[{ min: 10, max: 11, required: true }]}>
                         <Input />
                     </Form.Item>
-                    <Form.Item name={['user', 'introduction']} label="Meddelande">
+                    <Form.Item name={['user', 'message']} label="Meddelande">
                         <Input.TextArea rows={4} />
+                    </Form.Item>
+                    <Form.Item>
+                        <Button type="primary" htmlType="submit">
+                            Next
+                        </Button>
                     </Form.Item>
                 </Form>
             </div>
