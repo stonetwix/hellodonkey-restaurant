@@ -56,7 +56,7 @@ class DateTime extends React.Component<Props> {
                     layout="inline"
                     validateMessages={validateMessages}
                     onFinish={this.onFinish}
-                    style={{ marginBottom: '10rem' }}
+                    style={{ marginBottom: '20rem' }}
                 >
                     <Form.Item name={['user', 'number']} label="Antal" rules={[{ required: true }]}>
                         <InputNumber />

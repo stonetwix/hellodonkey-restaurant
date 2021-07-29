@@ -39,7 +39,7 @@ const BookATable = () => {
     ];
 
     return (
-        <>
+        <div style={{ height: '100vh' }}>
             <Row style={headlineContainerStyle}>
                 <Col span={24} style={headlineColumnStyle}>
                     <h1>Book a table</h1>
@@ -51,7 +51,7 @@ const BookATable = () => {
                 ))}
             </Steps>
             <div className="steps-content" style={contentStyle}>{steps[current].content}</div>
-        </>
+        </div>
     );
 };
 

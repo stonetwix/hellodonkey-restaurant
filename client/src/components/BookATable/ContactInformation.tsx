@@ -67,8 +67,8 @@ class ContactInformation extends React.Component<Props> {
                     <Form.Item name={['user', 'message']} label="Meddelande">
                         <Input.TextArea rows={4} />
                     </Form.Item>
-                    <Form.Item>
-                        <Button type="primary" htmlType="submit">
+                    <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 3 }}>
+                        <Button type="primary" htmlType="submit" style={{ marginBottom: '8rem' }}>
                             Next
                         </Button>
                     </Form.Item>
