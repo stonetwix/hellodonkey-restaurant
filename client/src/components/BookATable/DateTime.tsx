@@ -72,7 +72,7 @@ class DateTime extends React.Component<Props> {
                                     <InputNumber />
                                 </Form.Item>
                                 <Form.Item name={['user', 'date']} label="Datum" rules={[{ required: true }]}>
-                                    <DatePicker />
+                                    <DatePicker disabledDate={(currentDate) => currentDate < moment()}/>
                                 </Form.Item>            
                                 <Form.Item name={['user', 'time']} label="Tid" rules={[{ required: true }]}>
                                     <TimePicker format='HH:mm' minuteStep={30} showNow={false} disabledHours={() => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 21, 22, 23]}/>
