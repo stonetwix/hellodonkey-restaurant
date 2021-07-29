@@ -63,8 +63,8 @@ class DateTime extends React.Component<Props> {
                                 initialValues={{
                                     user: {
                                     number: dateTimeInfo?.numberOfPeople,
-                                    date: moment(),
-                                    time: moment().minutes(Math.round(moment().minute() / 30) * 30),
+                                    // date: moment(),
+                                    // time: moment().minutes(Math.round(moment().minute() / 30) * 30),
                                     }
                                 }}
                             >
