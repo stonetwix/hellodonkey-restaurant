@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react';
 import { Steps, Row, Col } from 'antd';
-import DateTime, { DateTimeInfo } from './DateTime';
+import DateTime from './DateTime';
 import ContactInformation from './ContactInformation';
 import Summary from './Summary';
 import BookingSuccess from './BookingSuccess';
@@ -14,7 +14,7 @@ const BookATable = () => {
     };
 
     const prev = () => {
-        setCurrent(current - 1);
+        setCurrent(current - 2);
     };
 
     const { Step } = Steps;
@@ -30,7 +30,7 @@ const BookATable = () => {
         },
         {
             title: 'Summering',
-            content: <Summary next={next}/>,
+            content: <Summary next={next} prev={prev}/>,
         },
         {
             title: 'Klart!',

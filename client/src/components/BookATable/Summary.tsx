@@ -4,6 +4,7 @@ import { BookingContext } from '../../contexts/BookingContext';
 
 interface Props {
     next(): void;
+    prev(): void;
 }
 
 class Summary extends React.Component<Props> {
@@ -13,6 +14,10 @@ class Summary extends React.Component<Props> {
     onFinish = () => {
         console.log('Bokat!')
         this.props.next();
+    }
+
+    onBackClick = () => {
+        this.props.prev();
     }
 
     render() {
@@ -32,7 +37,8 @@ class Summary extends React.Component<Props> {
                                     <p>Telefon: {contactInfo?.phone} </p>
                                     <p>Meddelande: {contactInfo?.message} </p>
                                 </Card>
-                                <Button type="primary" onClick={this.onFinish} style={{ marginTop: '2rem', marginBottom: '10rem' }}>Boka nu!</Button>
+                                <Button type="primary" onClick={this.onFinish} style={{ marginTop: '2rem', marginBottom: '10rem', marginRight: '2rem' }}>Boka nu!</Button>
+                                <Button onClick={this.onBackClick} style={{ marginTop: '2rem', marginBottom: '10rem' }}>Tillbaka</Button>
                             </Col>
                         </Row>
                     );

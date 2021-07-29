@@ -49,31 +49,46 @@ class ContactInformation extends React.Component<Props> {
 
     render() {
         return (
-            <div style={containerStyle}>
-                <Form 
-                    {...layout} 
-                    name="nest-messages" 
-                    onFinish={this.onFinish} 
-                    validateMessages={validateMessages}>
-                    <Form.Item name={['user', 'name']} label="Namn" rules={[{ required: true }]}>
-                        <Input />
-                    </Form.Item>
-                    <Form.Item name={['user', 'email']} label="Email" rules={[{ type: 'email', required: true }]}>
-                        <Input />
-                    </Form.Item>
-                    <Form.Item name={['user', 'phone']} label="Telefon" rules={[{ min: 10, max: 11, required: true }]}>
-                        <Input />
-                    </Form.Item>
-                    <Form.Item name={['user', 'message']} label="Meddelande">
-                        <Input.TextArea rows={4} />
-                    </Form.Item>
-                    <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 3 }}>
-                        <Button type="primary" htmlType="submit" style={{ marginBottom: '8rem' }}>
-                            Next
-                        </Button>
-                    </Form.Item>
-                </Form>
-            </div>
+            <BookingContext.Consumer>
+                {({ contactInfo }) => {
+                    return (
+                        <div style={containerStyle}>
+                            <Form 
+                                {...layout} 
+                                name="nest-messages" 
+                                onFinish={this.onFinish} 
+                                validateMessages={validateMessages}
+                                initialValues={{
+                                    user: {
+                                    name: contactInfo?.name,
+                                    email: contactInfo?.email,
+                                    phone: contactInfo?.phone,
+                                    message: contactInfo?.message
+                                    }
+                                }}
+                            >
+                                <Form.Item name={['user', 'name']} label="Namn" rules={[{ required: true }]}>
+                                    <Input />
+                                </Form.Item>
+                                <Form.Item name={['user', 'email']} label="Email" rules={[{ type: 'email', required: true }]}>
+                                    <Input />
+                                </Form.Item>
+                                <Form.Item name={['user', 'phone']} label="Telefon" rules={[{ min: 10, max: 11, required: true }]}>
+                                    <Input />
+                                </Form.Item>
+                                <Form.Item name={['user', 'message']} label="Meddelande">
+                                    <Input.TextArea rows={4} />
+                                </Form.Item>
+                                <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 3 }}>
+                                    <Button type="primary" htmlType="submit" style={{ marginBottom: '8rem' }}>
+                                        Next
+                                    </Button>
+                                </Form.Item>
+                            </Form>
+                        </div>
+                    );
+                }}
+            </BookingContext.Consumer>
         )
     }
 }

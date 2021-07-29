@@ -49,31 +49,42 @@ class DateTime extends React.Component<Props> {
 
     render() {
         return (
-            <>
-                <Form
-                    labelCol={{ span: 10 }}
-                    wrapperCol={{ span: 20 }}
-                    layout="inline"
-                    validateMessages={validateMessages}
-                    onFinish={this.onFinish}
-                    style={{ marginBottom: '20rem' }}
-                >
-                    <Form.Item name={['user', 'number']} label="Antal" rules={[{ required: true }]}>
-                        <InputNumber />
-                    </Form.Item>
-                    <Form.Item name={['user', 'date']} label="Datum" rules={[{ required: true }]}>
-                        <DatePicker />
-                    </Form.Item>            
-                    <Form.Item name={['user', 'time']} label="Tid" rules={[{ required: true }]}>
-                        <TimePicker format='HH:mm' minuteStep={30} showNow={false} />
-                    </Form.Item>
-                    <Form.Item>
-                        <Button type="primary" htmlType="submit">
-                            Next
-                        </Button>
-                    </Form.Item>
-                </Form>
-            </>
+            <BookingContext.Consumer>
+                {({ dateTimeInfo }) => {
+                    return(
+                        <>
+                            <Form
+                                labelCol={{ span: 10 }}
+                                wrapperCol={{ span: 20 }}
+                                layout="inline"
+                                validateMessages={validateMessages}
+                                onFinish={this.onFinish}
+                                style={{ marginBottom: '20rem' }}
+                                initialValues={{
+                                    user: {
+                                    number: dateTimeInfo?.numberOfPeople,
+                                    }
+                                }}
+                            >
+                                <Form.Item name={['user', 'number']} label="Antal" rules={[{ required: true }]}>
+                                    <InputNumber />
+                                </Form.Item>
+                                <Form.Item name={['user', 'date']} label="Datum" rules={[{ required: true }]}>
+                                    <DatePicker />
+                                </Form.Item>            
+                                <Form.Item name={['user', 'time']} label="Tid" rules={[{ required: true }]}>
+                                    <TimePicker format='HH:mm' minuteStep={30} showNow={false} />
+                                </Form.Item>
+                                <Form.Item>
+                                    <Button type="primary" htmlType="submit">
+                                        Next
+                                    </Button>
+                                </Form.Item>
+                            </Form>
+                        </>
+                    );
+                }}
+            </BookingContext.Consumer>
         )
     }
 }
