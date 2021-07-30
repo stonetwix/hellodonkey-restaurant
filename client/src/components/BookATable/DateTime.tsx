@@ -69,7 +69,7 @@ class DateTime extends React.Component<Props> {
                                 }}
                             >
                                 <Form.Item name={['user', 'number']} label="Guests" rules={[{ required: true }]}>
-                                    <InputNumber />
+                                    <InputNumber min={1} max={8}/>
                                 </Form.Item>
                                 <Form.Item name={['user', 'date']} label="Date" rules={[{ required: true }]}>
                                     <DatePicker disabledDate={(currentDate) => currentDate < moment()}/>
