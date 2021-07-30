@@ -14,14 +14,14 @@ const Footer = () => {
                     Tel: 031-11 12 12</p>
                 </Col>
                 <Col md={{ span: 3, offset: 1 }} style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
-                    <h2 style={textStyle}>Öppet</h2>
-                    <p style={textStyle}>Tis-fre: 16.00-20.30<br/>
-                    Lör: 16-22.30<br/>
-                    Sön: 14-18</p>
+                    <h2 style={textStyle}>We are open</h2>
+                    <p style={textStyle}>Tuesday-Friday: 16.00-20.30<br/>
+                    Saturday: 16-22.30<br/>
+                    Sunday: 14-18</p>
                 </Col>
                 <Col md={{ span: 2, offset: 2 }}>
                     <h2 style={{ ...textStyle}}>
-                        <Link to={'/bookatable'} style={{ color: 'white', textDecoration: 'underline' }}>Boka bord här!</Link>
+                        <Link to={'/bookatable'} style={{ color: 'white', textDecoration: 'underline' }}>Book a table!</Link>
                     </h2>
                     <div>
 

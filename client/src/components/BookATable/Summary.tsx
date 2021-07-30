@@ -28,17 +28,17 @@ class Summary extends React.Component<Props> {
                         <Row>
                             <Col span={24}>
                                 <Card title="Sammanfattning" style={{ width: 500 }}>
-                                    <p>Antal personer: {dateTimeInfo?.numberOfPeople}</p>
-                                    <p>Datum: {dateTimeInfo?.date}</p>
-                                    <p>Tid: {dateTimeInfo?.time}</p>
-                                    <p>Dina uppgifter: </p>
-                                    <p>Namn: {contactInfo?.name} </p>
+                                    <p>Number of guests: {dateTimeInfo?.numberOfPeople}</p>
+                                    <p>Date: {dateTimeInfo?.date}</p>
+                                    <p>Time: {dateTimeInfo?.time}</p>
+                                    <p>Your information: </p>
+                                    <p>Name: {contactInfo?.name} </p>
                                     <p>E-mail: {contactInfo?.email}  </p>
-                                    <p>Telefon: {contactInfo?.phone} </p>
-                                    <p>Meddelande: {contactInfo?.message} </p>
+                                    <p>Phone: {contactInfo?.phone} </p>
+                                    <p>Message: {contactInfo?.message} </p>
                                 </Card>
-                                <Button type="primary" onClick={this.onFinish} style={{ marginTop: '2rem', marginBottom: '10rem', marginRight: '2rem' }}>Boka nu!</Button>
-                                <Button onClick={this.onBackClick} style={{ marginTop: '2rem', marginBottom: '10rem' }}>Tillbaka</Button>
+                                <Button type="primary" onClick={this.onFinish} style={{ marginTop: '2rem', marginBottom: '10rem', marginRight: '2rem' }}>Book now!</Button>
+                                <Button onClick={this.onBackClick} style={{ marginTop: '2rem', marginBottom: '10rem' }}>Go back</Button>
                             </Col>
                         </Row>
                     );

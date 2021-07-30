@@ -7,8 +7,8 @@ class BookingSuccess extends React.Component {
         return (
             <Result
                 status="success"
-                title="Tack för din bokning och välkommen till Hello Donkey!"
-                subTitle="Ditt bokningsnummer är: 738456837585328"
+                title="Thank you for your reservation and welcome to Hello Donkey!"
+                subTitle="Your reservation number is: 738456837585328"
                 style={{ marginBottom: '10rem' }}
             />
         )

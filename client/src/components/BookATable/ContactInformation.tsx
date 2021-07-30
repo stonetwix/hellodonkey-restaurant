@@ -67,16 +67,16 @@ class ContactInformation extends React.Component<Props> {
                                     }
                                 }}
                             >
-                                <Form.Item name={['user', 'name']} label="Namn" rules={[{ required: true }]}>
+                                <Form.Item name={['user', 'name']} label="Name" rules={[{ required: true }]}>
                                     <Input />
                                 </Form.Item>
                                 <Form.Item name={['user', 'email']} label="Email" rules={[{ type: 'email', required: true }]}>
                                     <Input />
                                 </Form.Item>
-                                <Form.Item name={['user', 'phone']} label="Telefon" rules={[{ min: 10, max: 11, required: true }]}>
+                                <Form.Item name={['user', 'phone']} label="Phone" rules={[{ min: 10, max: 11, required: true }]}>
                                     <Input />
                                 </Form.Item>
-                                <Form.Item name={['user', 'message']} label="Meddelande">
+                                <Form.Item name={['user', 'message']} label="Message">
                                     <Input.TextArea rows={4} />
                                 </Form.Item>
                                 <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 3 }}>

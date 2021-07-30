@@ -21,19 +21,19 @@ const BookATable = () => {
 
     const steps = [
         {
-            title: 'Antal/datum',
+            title: 'Guests/date',
             content: <DateTime next={next}/>,
         },
         {
-            title: 'Din information',
+            title: 'Your information',
             content: <ContactInformation next={next}/>,
         },
         {
-            title: 'Summering',
+            title: 'Summary',
             content: <Summary next={next} prev={prev}/>,
         },
         {
-            title: 'Klart!',
+            title: 'Done!',
             content: <BookingSuccess />,
         },
     ];

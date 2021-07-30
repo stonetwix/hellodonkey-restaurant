@@ -23,9 +23,7 @@ const Tacos = () => {
                         alt='Tacos'
                         style={{ paddingBottom: '2rem', marginTop: '2rem' }}
                     />
-                    <h5>Hos oss njuter du av genuin mexikansk mat 
-                    i en avslappnad miljö. På menyn hittar du tacos, quesadillas, tostadas och mycket 
-                    annat gott. Vi har också stans bästa drinkar! Vårt mål är att vara Göteborgs mexikanska mecka när det kommer till mat och dryck. Vi vill att du som gäst ska känna den där genuina, varma mexikanska känslan när du kliver innanför vår dörr. Varmt välkomna!</h5>
+                    <h5>With us, you enjoy genuine Mexican food in a relaxed environment. On the menu you will find tacos, quesadillas, tostadas and much more good. We also have the best drinks in town! Our goal is to be Gothenburg's Mexican mecca when it comes to food and drink. We want you, as a guest, to feel that genuine, warm Mexican feeling when you step inside our door. <br/> Welcome!</h5>
                 </Col>
             </Row>
         </div>
