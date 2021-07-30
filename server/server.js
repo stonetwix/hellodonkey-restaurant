@@ -1,12 +1,13 @@
 const express = require('express');
 require('express-async-errors');
 const cookieSession = require('cookie-session');
+const foodsRouter = require('./foods/foods.router');
 
 const app = express();
 const port = 3001;
 
 app.use(express.json());
-
+app.use(foodsRouter);
 
 
 //error handler

@@ -1,14 +1,44 @@
 import React, { CSSProperties } from 'react';
-import { Col, Container, Row, Image } from 'react-bootstrap';
+import { Col, Container, Row, Image, Spinner } from 'react-bootstrap';
 import lime from '../../assets/lime.png';
 import tacos from '../../assets/three-tacos.png';
 import dip from '../../assets/dip.png';
 import background from '../../assets/pattern-takeaway.png'
 import { PlusCircleFilled } from '@ant-design/icons';
+import { List } from 'antd';
 
-class TakeAway extends React.Component {
+export interface Food {
+    id: number
+    title: string
+    description: string;
+    price: number;
+}
+
+interface State {
+    foods: Food[];
+    loading: boolean;
+}
+
+class TakeAway extends React.Component<{}, State> {
+
+    state: State = {
+        foods: [],
+        loading: true,
+    }
+
+    async componentDidMount() {
+        const foods = await getFoods();
+        this.setState({ foods: foods, loading: false });
+    }
 
     render() {
+        if (this.state.loading) {
+            return (
+                <div style={{textAlign: 'center', width: '100%', height: '100%'}}>
+                    <Spinner animation="grow" />
+                </div>
+            )
+        }
         return (
             <Container fluid>
                 <Row style={bgStyle}>
@@ -18,20 +48,22 @@ class TakeAway extends React.Component {
                 </Row>
                 <Row className="justify-content-md-center">
                     <Col md={{ span: 6 }} style={menuStyle}>
-                        <h4>Lorem ipsum <PlusCircleFilled style={addIconStyle}/><span style={priceStyle}>99 kr</span></h4>
-                        <p style={descriptionStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
-                        <h4>Lorem ipsum <PlusCircleFilled style={addIconStyle}/><span style={priceStyle}>99 kr</span></h4>
-                        <p style={descriptionStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
-                        <h4>Lorem ipsum <PlusCircleFilled style={addIconStyle}/><span style={priceStyle}>99 kr</span></h4>
-                        <p style={descriptionStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
-                        <h4>Lorem ipsum <PlusCircleFilled style={addIconStyle}/><span style={priceStyle}>99 kr</span></h4>
-                        <p style={descriptionStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
-                        <h4>Lorem ipsum <PlusCircleFilled style={addIconStyle}/><span style={priceStyle}>99 kr</span></h4>
-                        <p style={descriptionStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
-                        <h4>Lorem ipsum <PlusCircleFilled style={addIconStyle}/><span style={priceStyle}>99 kr</span></h4>
-                        <p style={descriptionStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
-                        <h4>Lorem ipsum <PlusCircleFilled style={addIconStyle}/><span style={priceStyle}>99 kr</span></h4>
-                        <p style={descriptionStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas, odio non laoreet pellentesque, justo est suscipit ligula, quis fringilla mi libero.</p>
+                        <List
+                            itemLayout="horizontal"
+                            size="large"
+                            dataSource={this.state.foods}
+                            renderItem={item => (
+                            
+                            <List.Item style={listStyle}>
+                                <List.Item.Meta
+                                    avatar={<PlusCircleFilled style={addIconStyle}/>}
+                                    title={item.title}
+                                    description={item.description}
+                                />
+                                <div style={{ marginLeft: '1rem' }}>{item.price} kr</div>
+                            </List.Item>
+                            )}
+                        />
                     </Col>
                 </Row>
                 <Row className="justify-content-md-center">
@@ -67,19 +99,15 @@ const menuStyle: CSSProperties = {
     marginTop: '5rem'
 }
 
-const priceStyle: CSSProperties = {
-    float: 'right',
-}
-
-const descriptionStyle: CSSProperties = {
-    marginBottom: '2rem',
-}
-
 const addIconStyle: CSSProperties = {
-    marginLeft: '1rem', 
-    verticalAlign: '0.1rem', 
+    marginTop: '0.4rem',
     color: '#61c9a8',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    fontSize: '1.5rem'
+}
+
+const listStyle: CSSProperties = {
+    margin: '1.3rem 0'
 }
 
 const bgStyle: CSSProperties = {
@@ -88,4 +116,16 @@ const bgStyle: CSSProperties = {
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center',
+}
+
+const getFoods = async () => {
+    try {
+        let response = await fetch('/api/foods');
+        if (response.ok) {
+          const data = await response.json();
+          return data;
+        }
+    } catch (error) {
+        console.error(error);
+    }
 }

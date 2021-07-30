@@ -1,0 +1,60 @@
+[{
+    "id": 1,
+    "title": "CUBANA STYLE",
+    "description": "Ham, sausage, pork shoulder, beef cutlet, mayo, bean spread, lettuce, avocado, tomatoes, mozzarella, jalapenos.",
+    "price": 119
+},
+{
+    "id": 2,
+    "title": "CEMITA",
+    "description": "Beef cutlet, baked sesame bread, papalo, chipotle, avocado, Oaxaca cheese, mayo, bean spread, lettuce, avocado, tomatoes, mozzarella, jalapenos.",
+    "price": 109
+},
+{
+    "id": 3,
+    "title": "MILANESA DE POLLO",
+    "description": "Mayo, bean spread, lettuce, avocado, tomatoes, mozarella, jalapenos.",
+    "price": 99
+},
+{
+    "id": 4,
+    "title": "BIG TACOS",
+    "description": "Served with cilantro, onions, lime, cucumber, radish.",
+    "price": 45
+},
+{
+    "id": 5,
+    "title": "NACHOS",
+    "description": "Cheese, beans, cilantro, onions, tomatoes, avocado, sour cream, jalapenos.",
+    "price": 89
+},
+{
+    "id": 6,
+    "title": "MIX BOWL",
+    "description": "Rice, beans, lettuce, sour cream, cheese.",
+    "price": 99
+},
+{
+    "id": 7,
+    "title": "BURRITO",
+    "description": "Flour tortilla, rice, beans, sour cream, mozzerella cheese, lettuce.",
+    "price": 89
+},
+{
+    "id": 8,
+    "title": "QUESADILLA DE MAIZ",
+    "description": "Corn based, lettuce, sour cream, cheese.",
+    "price": 89
+},
+{
+    "id": 9,
+    "title": "CHIMICHANGA",
+    "description": "Fried burrito, rice, beans, sour cream, cheese.",
+    "price": 99
+},
+{
+    "id": 10,
+    "title": "TOSTADA",
+    "description": "Flat crispy tortilla, beans, lettuce, sour cream, cheese.",
+    "price": 89
+}]

@@ -104,3 +104,7 @@ p {
 ::selection {
   background: #61c9a8;
 }
+
+.ant-list-item-meta-title {
+  font-size: 1.5rem;
+}

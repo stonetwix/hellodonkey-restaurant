@@ -21,7 +21,7 @@ const MenuStart = () => {
                         /> 
                     </Col>
                     <Col md='auto'>
-                        <h1>Menu</h1>
+                        <h1>Selection from our menu</h1>
                     </Col>
                     <Col xs='auto'>
                         <img
