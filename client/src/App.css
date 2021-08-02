@@ -20,6 +20,11 @@ p {
   color: #474747;
 }
 
+body {
+  font-family: 'Nunito';
+  color: #474747;
+}
+
 .ant-steps-item-title {
   font-family: 'Nunito';
   font-weight: 500;
@@ -107,4 +112,24 @@ p {
 
 .ant-list-item-meta-title {
   font-size: 1.5rem;
+  color: #474747;
+}
+
+.ant-list-item-meta-description {
+  color: #474747;
+}
+
+.ant-card-head-title {
+  font-family: 'Staatliches';
+  font-size: 1.3rem;
+  color: #474747;
+}
+
+.ant-card-extra {
+  font-family: 'Nunito';
+  color: #474747;
+}
+
+.ant-card {
+  color: #474747;
 }
