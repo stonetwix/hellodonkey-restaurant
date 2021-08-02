@@ -25,7 +25,7 @@ const Navigation = () => {
                         <Link to='/leftovers' style={navItemStyle}>Leftovers</Link>
                         <Link to='/' style={navItemStyle}>About us</Link>
                         <Link to='/' style={navItemStyle}>Contact</Link>
-                        <Link to='/' style={{ color: 'white' }}>
+                        <Link to='/cart' style={{ color: 'white' }}>
                             <ShoppingCartOutlined style={{ fontSize: '1.5rem', marginRight: '-0.3rem' }}/>
                         </Link>
                         <BadgeCart />

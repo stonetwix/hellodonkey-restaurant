@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import LogInView from "./components/Admin/LogInView";
 import BookATable from "./components/BookATable/BookATableView";
+import CartView from "./components/Cart/CartView";
 import Footer from "./components/Footer";
 import LeftoverView from "./components/Leftovers/LeftoverView";
 import Navigation from "./components/Navbar";
@@ -26,6 +27,7 @@ function App() {
             <Route path='/login' component={LogInView}/>
             <Route path='/takeaway' component={TakeAway}/>
             <Route path='/leftovers' component={LeftoverView}/>
+            <Route path='/cart' component={CartView}/>
           </Switch>
           <Footer />
         </Router>
