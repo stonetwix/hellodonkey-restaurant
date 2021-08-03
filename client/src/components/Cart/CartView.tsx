@@ -1,5 +1,6 @@
-import React from 'react';
+import { Elements } from '@stripe/react-stripe-js';
 import CartListItems from './CartListItems';
+import CheckoutForm, { stripePromise } from './Checkout';
 import TotalAmount from './TotalAmount';
 
 const CartView = () => {
@@ -8,6 +9,9 @@ const CartView = () => {
         <>
             <CartListItems />
             <TotalAmount />
+            <Elements stripe={stripePromise}>
+                <CheckoutForm />
+            </Elements>
         </>
     )
 }

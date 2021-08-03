@@ -63,6 +63,4 @@ const deleteButtonStyle: CSSProperties = {
     boxShadow: 'none',
     color: '#F2545B',
     fontSize: '1.5rem',
-    touchAction: 'none',
-    transition: 'none'
 }
