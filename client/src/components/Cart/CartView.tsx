@@ -1,10 +1,14 @@
 import React from 'react';
 import CartListItems from './CartListItems';
+import TotalAmount from './TotalAmount';
 
 const CartView = () => {
 
     return(
-        <CartListItems />
+        <>
+            <CartListItems />
+            <TotalAmount />
+        </>
     )
 }
 
