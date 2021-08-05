@@ -1,27 +1,18 @@
 import { CloseCircleFilled } from '@ant-design/icons';
 import { Button, Col, InputNumber, List, Row } from 'antd';
-import { CSSProperties } from 'react';
-
-const data = [
-    {
-      title: 'Cart Item 1',
-      price: 99
-    },
-    {
-      title: 'Cart Item 2',
-      price: 109
-    },
-    {
-        title: 'Cart Item 3',
-        price: 89
-      },
-];
+import { CSSProperties, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+    getCart,
+  } from '../Cart/cartSlice';
+import { CartItem } from '../Takeaway/TakeawayView';
 
 const onChange = (value: number) => {
     console.log('changed', value);
 }
 
 const CartListItems = () => {
+    const cart: CartItem[] = useSelector(getCart);
 
     return (
         <Row style={containerStyle}>
@@ -29,14 +20,14 @@ const CartListItems = () => {
                 <List
                     style={{ width: '100%' }}
                     itemLayout="horizontal"
-                    dataSource={data}
+                    dataSource={cart}
                     renderItem={item => (
                     <List.Item
                         actions={[<Button style={deleteButtonStyle}><CloseCircleFilled /></Button>]}
                     >
                         <List.Item.Meta
-                            title={item.title}
-                            description={["Ant Design, a design language for background applications, is refined by Ant UED Team", <InputNumber min={1} max={10} defaultValue={3} onChange={onChange} style={{ margin: '0 3rem' }} />, item.price, ' kr']} 
+                            title={item.menuItem.title}
+                            description={["Ant Design, a design language for background applications, is refined by Ant UED Team", <InputNumber min={1} max={10} value={item.quantity} onChange={onChange} style={{ margin: '0 3rem' }} />, item.menuItem.price, ' kr']} 
                         />
                     </List.Item>
                     )}

@@ -41,4 +41,6 @@ export const { increment, decrement, addToCart } = slice.actions;
 
 export const selectCount = (state: any) => state.cart.cart.map((item: CartItem) => item.quantity).reduce((curr: number, acc: number) => curr + acc, 0);
 
+export const getCart = (state: any) => state.cart.cart;
+
 export default slice.reducer;
