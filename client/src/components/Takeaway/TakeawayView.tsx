@@ -8,14 +8,20 @@ import { PlusCircleFilled } from '@ant-design/icons';
 import { List } from 'antd';
 import { useDispatch } from 'react-redux';
 import {
+    addToCart,
     increment,
   } from '../Cart/cartSlice';
 
 export interface Food {
-    id: number
-    title: string
+    id: number;
+    title: string;
     description: string;
     price: number;
+}
+
+export interface CartItem {
+    menuItem: Food;
+    quantity: number;
 }
 
 
@@ -57,7 +63,7 @@ const TakeAway = () => {
                         
                         <List.Item style={listStyle}>
                             <List.Item.Meta
-                                avatar={<PlusCircleFilled style={addIconStyle} onClick={() => dispatch(increment())}/>}
+                                avatar={<PlusCircleFilled style={addIconStyle} onClick={() => {dispatch(increment()); dispatch(addToCart(item))}}/>}
                                 title={item.title}
                                 description={item.description}
                             />

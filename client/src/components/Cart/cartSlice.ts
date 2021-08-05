@@ -1,9 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { CartItem, Food } from '../Takeaway/TakeawayView';
 
 export const slice = createSlice({
   name: 'cart',
   initialState: {
     value: 0,
+    cart: [],
+    quantity: 0,
+    menuItems: [],
   },
   reducers: {
     increment: state => {
@@ -12,18 +16,30 @@ export const slice = createSlice({
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       state.value += 1;
-      console.log(state.value)
     },
     decrement: state => {
       //state.value -= 1;
     },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
-    },
+    // incrementByAmount: (state, action) => {
+    //   state.value += action.payload;
+    // },
+    addToCart: (state, action) => {
+      const menuItem: Food = action.payload;
+      let cartItems: CartItem[] = state.cart;
+      
+      const existingCartItems = cartItems.filter((item: CartItem) => item.menuItem.id === menuItem.id);
+      if (existingCartItems.length === 0) {
+        const cartItem: CartItem = {menuItem: menuItem, quantity: 1};
+        cartItems.push(cartItem);
+      } else {
+        const cartItem: CartItem = {menuItem: menuItem, quantity: existingCartItems[0].quantity + 1};
+        (state.cart as CartItem[]) = cartItems.map((item: CartItem) => item.menuItem.id === menuItem.id ? cartItem : item);
+      }
+    }
   },
 });
 
-export const { increment, decrement, incrementByAmount } = slice.actions;
+export const { increment, decrement, addToCart } = slice.actions;
 
 export const selectCount = (state: any) => state.cart.value;
 
