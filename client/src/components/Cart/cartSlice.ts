@@ -6,7 +6,6 @@ export const slice = createSlice({
   initialState: {
     value: 0,
     cart: [],
-    quantity: 0,
     menuItems: [],
   },
   reducers: {
@@ -26,7 +25,6 @@ export const slice = createSlice({
     addToCart: (state, action) => {
       const menuItem: Food = action.payload;
       let cartItems: CartItem[] = state.cart;
-      
       const existingCartItems = cartItems.filter((item: CartItem) => item.menuItem.id === menuItem.id);
       if (existingCartItems.length === 0) {
         const cartItem: CartItem = {menuItem: menuItem, quantity: 1};
@@ -41,6 +39,6 @@ export const slice = createSlice({
 
 export const { increment, decrement, addToCart } = slice.actions;
 
-export const selectCount = (state: any) => state.cart.value;
+export const selectCount = (state: any) => state.cart.cart.map((item: CartItem) => item.quantity).reduce((curr: number, acc: number) => curr + acc, 0);
 
 export default slice.reducer;
