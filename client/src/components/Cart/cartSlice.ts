@@ -43,4 +43,6 @@ export const selectCount = (state: any) => state.cart.cart.map((item: CartItem) 
 
 export const getCart = (state: any) => state.cart.cart;
 
+export const getTotalPrice = (state: any) => state.cart.cart.map((item: CartItem) => (item.menuItem.price * item.quantity)).reduce((curr: number, acc: number) => curr + acc, 0);
+
 export default slice.reducer;

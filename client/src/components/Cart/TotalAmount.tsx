@@ -1,11 +1,16 @@
 import { Col, Divider, Row } from 'antd';
 import { CSSProperties } from 'react';
+import { useSelector } from 'react-redux';
+import { CartItem } from '../Takeaway/TakeawayView';
+import { getTotalPrice } from './cartSlice';
 
 const TotalAmount = () => {
+    const totalPrice: CartItem[] = useSelector(getTotalPrice);
+    
     return (
         <Row style={containerStyle}>
             <Col xs={24} style={colStyle}>
-                <h5>Total: 399 kr</h5>
+                <h5>Total: {totalPrice} kr</h5>
             </Col>
             <Col xs={24}><Divider plain>Payment</Divider></Col>
         </Row>

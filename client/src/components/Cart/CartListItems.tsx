@@ -27,7 +27,7 @@ const CartListItems = () => {
                     >
                         <List.Item.Meta
                             title={item.menuItem.title}
-                            description={["Ant Design, a design language for background applications, is refined by Ant UED Team", <InputNumber min={1} max={10} value={item.quantity} onChange={onChange} style={{ margin: '0 3rem' }} />, item.menuItem.price, ' kr']} 
+                            description={[<span style={descritionStyle}>{item.menuItem.description.substring(0, 60) + '...'} </span>, <InputNumber min={1} max={10} value={item.quantity} onChange={onChange} style={{ margin: '0 3rem' }} />, item.menuItem.price * item.quantity, ' kr']} 
                         />
                     </List.Item>
                     )}
@@ -54,4 +54,8 @@ const deleteButtonStyle: CSSProperties = {
     boxShadow: 'none',
     color: '#F2545B',
     fontSize: '1.5rem',
+}
+
+const descritionStyle: CSSProperties = {
+    fontFamily: 'Roboto Mono',
 }
