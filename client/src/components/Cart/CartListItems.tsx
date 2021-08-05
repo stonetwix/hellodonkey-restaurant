@@ -1,18 +1,21 @@
 import { CloseCircleFilled } from '@ant-design/icons';
 import { Button, Col, InputNumber, List, Row } from 'antd';
-import { CSSProperties, useEffect, useState } from 'react';
+import { CSSProperties } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
+    changeCartItemQuantity,
     getCart,
   } from '../Cart/cartSlice';
 import { CartItem } from '../Takeaway/TakeawayView';
 
-const onChange = (value: number) => {
-    console.log('changed', value);
-}
 
 const CartListItems = () => {
     const cart: CartItem[] = useSelector(getCart);
+    const dispatch = useDispatch();
+
+    const onQuantityChange = (id: number, value: number) => {
+        dispatch(changeCartItemQuantity({menuItemId: id, quantity: value}))
+    }
 
     return (
         <Row style={containerStyle}>
@@ -27,7 +30,7 @@ const CartListItems = () => {
                     >
                         <List.Item.Meta
                             title={item.menuItem.title}
-                            description={[<span style={descritionStyle}>{item.menuItem.description.substring(0, 60) + '...'} </span>, <InputNumber min={1} max={10} value={item.quantity} onChange={onChange} style={{ margin: '0 3rem' }} />, item.menuItem.price * item.quantity, ' kr']} 
+                            description={[<span style={descritionStyle}>{item.menuItem.description.substring(0, 60) + '...'}</span>, <InputNumber min={1} max={10} value={item.quantity} onChange={quantity => onQuantityChange(item.menuItem.id, quantity)} style={{ margin: '0 3rem' }} />, item.menuItem.price * item.quantity, ' kr']} 
                         />
                     </List.Item>
                     )}

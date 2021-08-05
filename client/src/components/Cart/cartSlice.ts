@@ -19,9 +19,6 @@ export const slice = createSlice({
     decrement: state => {
       //state.value -= 1;
     },
-    // incrementByAmount: (state, action) => {
-    //   state.value += action.payload;
-    // },
     addToCart: (state, action) => {
       const menuItem: Food = action.payload;
       let cartItems: CartItem[] = state.cart;
@@ -33,11 +30,19 @@ export const slice = createSlice({
         const cartItem: CartItem = {menuItem: menuItem, quantity: existingCartItems[0].quantity + 1};
         (state.cart as CartItem[]) = cartItems.map((item: CartItem) => item.menuItem.id === menuItem.id ? cartItem : item);
       }
+    },
+    changeCartItemQuantity: (state, action) => {
+      const { menuItemId, quantity } = action.payload;
+      let cartItems: CartItem[] = state.cart;
+      //const updatedCartItem: CartItem = {menuItem: menuItem, quantity: quantity};
+      (state.cart as CartItem[]) = cartItems.map((item: CartItem) => item.menuItem.id === menuItemId ? {...item, quantity: quantity} : item);
+
+
     }
   },
 });
 
-export const { increment, decrement, addToCart } = slice.actions;
+export const { increment, decrement, addToCart, changeCartItemQuantity } = slice.actions;
 
 export const selectCount = (state: any) => state.cart.cart.map((item: CartItem) => item.quantity).reduce((curr: number, acc: number) => curr + acc, 0);
 
