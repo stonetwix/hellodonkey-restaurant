@@ -9,7 +9,6 @@ import { List } from 'antd';
 import { useDispatch } from 'react-redux';
 import {
     addToCart,
-    increment,
   } from '../Cart/cartSlice';
 
 export interface Food {
@@ -40,7 +39,7 @@ const TakeAway = () => {
 
     if (loading) {
         return (
-            <div style={{textAlign: 'center', width: '100%', height: '100%'}}>
+            <div style={{ textAlign: 'center', width: '100%', height: '100%' }}>
                 <Spinner animation="grow" />
             </div>
         )
@@ -63,7 +62,7 @@ const TakeAway = () => {
                         
                         <List.Item style={listStyle}>
                             <List.Item.Meta
-                                avatar={<PlusCircleFilled style={addIconStyle} onClick={() => {dispatch(increment()); dispatch(addToCart(item))}}/>}
+                                avatar={<PlusCircleFilled style={addIconStyle} onClick={() => {dispatch(addToCart(item))}}/>}
                                 title={item.title}
                                 description={item.description}
                             />

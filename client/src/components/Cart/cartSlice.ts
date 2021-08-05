@@ -4,7 +4,7 @@ import { CartItem, Food } from '../Takeaway/TakeawayView';
 export const slice = createSlice({
   name: 'cart',
   initialState: {
-    value: 0,
+    //value: 0,
     cart: [],
     menuItems: [],
   },
@@ -14,7 +14,7 @@ export const slice = createSlice({
       // doesn't actually mutate the state because it uses the immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
-      state.value += 1;
+      //state.value += 1;
     },
     decrement: state => {
       //state.value -= 1;
@@ -34,10 +34,7 @@ export const slice = createSlice({
     changeCartItemQuantity: (state, action) => {
       const { menuItemId, quantity } = action.payload;
       let cartItems: CartItem[] = state.cart;
-      //const updatedCartItem: CartItem = {menuItem: menuItem, quantity: quantity};
       (state.cart as CartItem[]) = cartItems.map((item: CartItem) => item.menuItem.id === menuItemId ? {...item, quantity: quantity} : item);
-
-
     }
   },
 });
