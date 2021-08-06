@@ -1,7 +1,7 @@
 const express = require('express');
 require('express-async-errors');
 const cookieSession = require('cookie-session');
-const foodsRouter = require('./foods/foods.router');
+const foodsRouter = require('./menuItems/menuItems.router');
 
 const app = express();
 const port = 3001;

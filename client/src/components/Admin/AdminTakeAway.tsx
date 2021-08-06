@@ -14,14 +14,19 @@ const AdminTakeAway = () => {
 
     useEffect(() => {
         async function fetchData() {
-            setFoods(await getFoods());
+            setFoods(await getMenuItems());
             setLoading(false);
         }
         fetchData()
     }, []);
 
     const successDelete = () => {
-        message.success('The product has been deleted', 3);
+        message.success({
+            content: 'Menu item deleted',
+            style: {
+              marginTop: '6rem',
+            },
+        });
     };
 
     const handleDelete = () => {
@@ -107,9 +112,9 @@ const editStyle: CSSProperties = {
     boxShadow: 'none'
 }
 
-const getFoods = async () => {
+const getMenuItems = async () => {
     try {
-        let response = await fetch('/api/foods');
+        let response = await fetch('/api/menuitems');
         if (response.ok) {
           const data = await response.json();
           return data;

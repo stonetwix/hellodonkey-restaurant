@@ -14,7 +14,7 @@ const LeftOverCardGrid = () => {
 
     useEffect(() => {
         async function fetchData() {
-            setFoods(await getFoods());
+            setFoods(await getMenuItems());
             setLoading(false);
         }
         fetchData()
@@ -77,9 +77,9 @@ const addIconStyle: CSSProperties = {
     fontSize: '1.5rem'
 }
 
-const getFoods = async () => {
+const getMenuItems = async () => {
     try {
-        let response = await fetch('/api/foods');
+        let response = await fetch('/api/menuitems');
         if (response.ok) {
           const data = await response.json();
           return data;

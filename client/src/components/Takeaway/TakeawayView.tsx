@@ -31,7 +31,7 @@ const TakeAway = () => {
 
     useEffect(() => {
         async function fetchData() {
-            setFoods(await getFoods());
+            setFoods(await getMenuItems());
             setLoading(false);
         }
         fetchData()
@@ -123,9 +123,9 @@ const bgStyle: CSSProperties = {
     backgroundPosition: 'center',
 }
 
-const getFoods = async () => {
+const getMenuItems = async () => {
     try {
-        let response = await fetch('/api/foods');
+        let response = await fetch('/api/menuitems');
         if (response.ok) {
           const data = await response.json();
           return data;
