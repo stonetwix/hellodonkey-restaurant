@@ -18,7 +18,6 @@ const SiderMenu = () => {
                 console.log(collapsed, type);
             }}
             style={{
-                height: '100vh',
                 background: '#FFDBDA',
                 marginTop: '5rem',
             }}

@@ -140,3 +140,23 @@ body {
   border-radius: 5px;
   padding: 1.5rem;
 }
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background: #F2545B;
+}
+
+.ant-menu-item-selected {
+  color: #fff;
+}
+
+.ant-menu-item-selected a, .ant-menu-item-selected a:hover {
+  color: #fff;
+}
+
+.ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
+  border-right: #474747 5px solid;
+}
+
+aside {
+  background: #FFDBDA;
+}

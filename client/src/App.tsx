@@ -1,6 +1,7 @@
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
+import AdminEditMenuItem from "./components/Admin/AdminEditMenuItem";
 import AdminLeftovers from "./components/Admin/AdminLeftovers";
 import AdminOrders from "./components/Admin/AdminOrders";
 import AdminReservations from "./components/Admin/AdminReservations";
@@ -40,6 +41,7 @@ function App() {
             <Route path='/admin/orders' component={AdminOrders}/>
             <Route path='/admin/reservations' component={AdminReservations}/>
             <Route path='/admin/users' component={AdminUsers}/>
+            <Route path='/admin/editmenuitem/:id' component={AdminEditMenuItem}/>
           </Switch>
           <Footer />
         </Router>
