@@ -1,6 +1,12 @@
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
+import AdminLeftovers from "./components/Admin/AdminLeftovers";
+import AdminOrders from "./components/Admin/AdminOrders";
+import AdminReservations from "./components/Admin/AdminReservations";
+import AdminStartView from "./components/Admin/AdminStartView";
+import AdminTakeAway from "./components/Admin/AdminTakeAway";
+import AdminUsers from "./components/Admin/AdminUsers";
 import LogInView from "./components/Admin/LogInView";
 import BookATable from "./components/BookATable/BookATableView";
 import CartView from "./components/Cart/CartView";
@@ -24,10 +30,16 @@ function App() {
           <Switch>
             <Route exact path='/' component={StartPageView}/>
             <Route path='/bookatable' component={BookATable}/>
-            <Route path='/login' component={LogInView}/>
             <Route path='/takeaway' component={TakeAway}/>
             <Route path='/leftovers' component={LeftoverView}/>
             <Route path='/cart' component={CartView}/>
+            <Route exact path='/admin' component={LogInView}/>
+            <Route path='/admin/start' component={AdminStartView}/>
+            <Route path='/admin/menu' component={AdminTakeAway}/>
+            <Route path='/admin/leftovers' component={AdminLeftovers}/>
+            <Route path='/admin/orders' component={AdminOrders}/>
+            <Route path='/admin/reservations' component={AdminReservations}/>
+            <Route path='/admin/users' component={AdminUsers}/>
           </Switch>
           <Footer />
         </Router>

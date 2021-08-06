@@ -1,27 +1,26 @@
-import React, { CSSProperties } from 'react';
-import { Card, Col, List, Row } from 'antd';
+import { CSSProperties, useEffect, useState } from 'react';
+import { Card, List, Row } from 'antd';
 import { Food } from '../Takeaway/TakeawayView';
 import { PlusCircleFilled } from '@ant-design/icons';
 import { Spinner } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../Cart/cartSlice';
 
-interface State {
-    foods: Food[];
-    loading: boolean;
-}
 
-class LeftOverCardGrid extends React.Component<{}, State> {
-    state: State = {
-        foods: [],
-        loading: true,
-    }
+const LeftOverCardGrid = () => {
+    const dispatch = useDispatch();
+    const [foods, setFoods] = useState<Food[]>([]);
+    const [loading, setLoading] = useState(true);
 
-    async componentDidMount() {
-        const foods = await getFoods();
-        this.setState({ foods: foods, loading: false });
-    }
+    useEffect(() => {
+        async function fetchData() {
+            setFoods(await getFoods());
+            setLoading(false);
+        }
+        fetchData()
+    }, []);
 
-    render() {
-        if (this.state.loading) {
+        if (loading) {
             return (
                 <div style={{textAlign: 'center', width: '100%', height: '100%'}}>
                     <Spinner animation="grow" />
@@ -41,12 +40,12 @@ class LeftOverCardGrid extends React.Component<{}, State> {
                     xl: 3,
                     xxl: 3,
                     }}
-                    dataSource={this.state.foods}
+                    dataSource={foods}
                     renderItem={item => (
                     <List.Item>
                         <Card 
                             actions={[
-                                <PlusCircleFilled style={addIconStyle}/>,
+                                <PlusCircleFilled style={addIconStyle} onClick={() => {dispatch(addToCart(item))}}/>,
                             ]}
                             title={item.title} 
                             extra={Math.floor(item.price / 2) + ' kr'}
@@ -59,7 +58,6 @@ class LeftOverCardGrid extends React.Component<{}, State> {
                 </Row>
             </div>
         )
-    }
 }
 
 export default LeftOverCardGrid;
