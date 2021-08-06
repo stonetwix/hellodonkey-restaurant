@@ -4,8 +4,9 @@ import { CSSProperties } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     changeCartItemQuantity,
+    deleteCartItem,
     getCart,
-  } from '../Cart/cartSlice';
+} from '../Cart/cartSlice';
 import { CartItem } from '../Takeaway/TakeawayView';
 
 
@@ -14,7 +15,11 @@ const CartListItems = () => {
     const dispatch = useDispatch();
 
     const onQuantityChange = (id: number, value: number) => {
-        dispatch(changeCartItemQuantity({menuItemId: id, quantity: value}))
+        dispatch(changeCartItemQuantity({menuItemId: id, quantity: value}));
+    }
+
+    const onDeleteClick = (id: number) => {
+        dispatch(deleteCartItem(id));
     }
 
     return (
@@ -26,11 +31,11 @@ const CartListItems = () => {
                     dataSource={cart}
                     renderItem={item => (
                     <List.Item
-                        actions={[<Button style={deleteButtonStyle}><CloseCircleFilled /></Button>]}
+                        actions={[<Button style={deleteButtonStyle} onClick={() => onDeleteClick(item.menuItem.id)}><CloseCircleFilled /></Button>]}
                     >
                         <List.Item.Meta
                             title={item.menuItem.title}
-                            description={[<span style={descritionStyle}>{item.menuItem.description.substring(0, 60) + '...'}</span>, <InputNumber min={1} max={10} value={item.quantity} onChange={quantity => onQuantityChange(item.menuItem.id, quantity)} style={{ margin: '0 3rem' }} />, item.menuItem.price * item.quantity, ' kr']} 
+                            description={[<span style={descritionStyle}>{item.menuItem.description.substring(0, 60) + '...'}</span>, <InputNumber min={1} max={10} value={item.quantity} onChange={quantity => onQuantityChange(item.menuItem.id, quantity)} style={{ margin: '0 3rem' }} />, item.menuItem.price * item.quantity, ' kr']}
                         />
                     </List.Item>
                     )}

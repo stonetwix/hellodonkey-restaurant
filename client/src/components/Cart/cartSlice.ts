@@ -35,13 +35,18 @@ export const slice = createSlice({
       const { menuItemId, quantity } = action.payload;
       let cartItems: CartItem[] = state.cart;
       (state.cart as CartItem[]) = cartItems.map((item: CartItem) => item.menuItem.id === menuItemId ? {...item, quantity: quantity} : item);
+    },
+    deleteCartItem: (state, action) => {
+      const menuItemId = action.payload;
+      let cartItems: CartItem[] = state.cart;
+      (state.cart as CartItem[]) = cartItems.filter((item: CartItem) => item.menuItem.id !== menuItemId);
     }
   },
 });
 
-export const { increment, decrement, addToCart, changeCartItemQuantity } = slice.actions;
+export const { increment, decrement, addToCart, changeCartItemQuantity, deleteCartItem } = slice.actions;
 
-export const selectCount = (state: any) => state.cart.cart.map((item: CartItem) => item.quantity).reduce((curr: number, acc: number) => curr + acc, 0);
+export const badgeCount = (state: any) => state.cart.cart.map((item: CartItem) => item.quantity).reduce((curr: number, acc: number) => curr + acc, 0);
 
 export const getCart = (state: any) => state.cart.cart;
 

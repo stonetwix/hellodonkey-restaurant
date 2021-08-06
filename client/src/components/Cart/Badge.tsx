@@ -1,9 +1,10 @@
 import Badge from 'react-bootstrap/Badge';
 import { useSelector } from 'react-redux';
-import { selectCount } from './cartSlice';
+import { badgeCount } from './cartSlice';
+
 
 const BadgeCart = () => {
-    const count = useSelector(selectCount);
+    const count = useSelector(badgeCount);
 
     if (count <= 0) {
         return (
