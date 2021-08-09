@@ -32,7 +32,7 @@ const AdminEditMenuItem = () => {
 
     useEffect(() => {
         async function fetchData() {
-            setMenuItem(await getMenuItem(location.pathname));
+            setMenuItem(await getMenuItem(location.pathname.split('/').reverse()[0]));
             setLoading(false);
         }
         fetchData()
