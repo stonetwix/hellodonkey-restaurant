@@ -1,6 +1,6 @@
 import { Form, Input, Button, Row, Col } from "antd";
 import { CSSProperties } from "react";
-import { Route, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const layout = {
     labelCol: {

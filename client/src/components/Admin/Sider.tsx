@@ -1,6 +1,6 @@
 import { Layout, Menu } from 'antd';
 import { Link, useLocation, withRouter } from 'react-router-dom';
-import { BellOutlined, ClockCircleOutlined, DollarCircleOutlined, ReadOutlined, UserOutlined } from '@ant-design/icons';
+import { BellOutlined, ClockCircleOutlined, DollarCircleOutlined, HomeOutlined, ReadOutlined, UserOutlined } from '@ant-design/icons';
 
 const { Sider } = Layout;
 
@@ -24,10 +24,13 @@ const SiderMenu = () => {
         >
             <Menu 
                 mode="inline" 
-                defaultSelectedKeys={['/admin/menu-items']} 
+                defaultSelectedKeys={['/admin/start']} 
                 selectedKeys={[location.pathname]} 
                 style={{ marginTop: '5rem', background: '#FFDBDA' }}
             >
+                <Menu.Item key="/admin/start" icon={<HomeOutlined />}>
+                    <Link to={'/admin/start'}>Start</Link>
+                </Menu.Item>
                 <Menu.Item key="/admin/menu" icon={<ReadOutlined />}>
                     <Link to={'/admin/menu'}>Take away menu</Link>
                 </Menu.Item>
