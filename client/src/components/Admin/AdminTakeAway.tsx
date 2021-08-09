@@ -1,14 +1,15 @@
-import { DeleteOutlined, FormOutlined } from "@ant-design/icons";
+import { DeleteOutlined, FormOutlined, PlusCircleOutlined } from "@ant-design/icons";
 import { Button, Layout, List, message } from "antd";
 import { CSSProperties, useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Food } from "../Takeaway/TakeawayView";
 import SiderMenu from './Sider';
 
 const { Content } = Layout;
 
 const AdminTakeAway = () => {
+    let history = useHistory();
     const [foods, setFoods] = useState<Food[]>([]);
     const [loading, setLoading] = useState(true);
 
@@ -33,6 +34,10 @@ const AdminTakeAway = () => {
         console.log('deleted')
     };
 
+    const handleAddClick = () => {
+        history.push('/admin/addmenuitem');
+    }
+
     if (loading) {
         return (
             <div style={{textAlign: 'center', width: '100%', height: '100%'}}>
@@ -46,6 +51,11 @@ const AdminTakeAway = () => {
             <SiderMenu />
             <Content>
                 <div style={contentContainerStyle}>
+                    <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
+                    <Button style={buttonStyle} onClick={handleAddClick}>
+                        <PlusCircleOutlined />Add Menu Item
+                    </Button>
+                    </div>
                     <List
                         itemLayout="horizontal"
                         size="large"
@@ -110,6 +120,11 @@ const editStyle: CSSProperties = {
     marginTop: '1.2rem',
     marginRight: '1rem',
     boxShadow: 'none'
+}
+
+const buttonStyle: CSSProperties = {
+    marginBottom: '3rem',
+    marginRight: '2rem'
 }
 
 const getMenuItems = async () => {
