@@ -1,7 +1,9 @@
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
+import AdminAddLeftover from "./components/Admin/AdminAddLeftover";
 import AdminAddMenuItem from "./components/Admin/AdminAddMenuItem";
+import AdminEditLeftover from "./components/Admin/AdminEditLeftover";
 import AdminEditMenuItem from "./components/Admin/AdminEditMenuItem";
 import AdminLeftovers from "./components/Admin/AdminLeftovers";
 import AdminOrders from "./components/Admin/AdminOrders";
@@ -44,6 +46,8 @@ function App() {
             <Route path='/admin/users' component={AdminUsers}/>
             <Route path='/admin/editmenuitem/:id' component={AdminEditMenuItem}/>
             <Route path='/admin/addmenuitem' component={AdminAddMenuItem}/>
+            <Route path='/admin/addleftover' component={AdminAddLeftover}/>
+            <Route path='/admin/editleftover/:id' component={AdminEditLeftover}/>
           </Switch>
           <Footer />
         </Router>

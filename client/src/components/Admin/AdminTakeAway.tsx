@@ -51,6 +51,7 @@ const AdminTakeAway = () => {
             <SiderMenu />
             <Content>
                 <div style={contentContainerStyle}>
+                    <h1 style={{ marginLeft: '1rem', marginTop: '1rem' }}>Take away menu</h1>
                     <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
                     <Button style={buttonStyle} onClick={handleAddClick}>
                         <PlusCircleOutlined />Add Menu Item
