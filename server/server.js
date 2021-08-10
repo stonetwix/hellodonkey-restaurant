@@ -1,13 +1,15 @@
 const express = require('express');
 require('express-async-errors');
 const cookieSession = require('cookie-session');
-const foodsRouter = require('./menuItems/menuItems.router');
+const menuItemsRouter = require('./menuItems/menuItems.router');
+const ordersRouter = require('./oders/orders.router');
 
 const app = express();
 const port = 3001;
 
 app.use(express.json());
-app.use(foodsRouter);
+app.use(menuItemsRouter);
+app.use(ordersRouter);
 
 
 //error handler

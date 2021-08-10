@@ -3,14 +3,14 @@ import { Button, Layout, List, message } from "antd";
 import { CSSProperties, useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
-import { Food } from "../Takeaway/TakeawayView";
+import { MenuItem }  from "../Takeaway/TakeawayView";
 import SiderMenu from './Sider';
 
 const { Content } = Layout;
 
 const AdminLeftovers = () => {
     let history = useHistory();
-    const [foods, setFoods] = useState<Food[]>([]);
+    const [foods, setFoods] = useState<MenuItem[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

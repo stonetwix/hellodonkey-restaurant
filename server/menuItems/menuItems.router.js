@@ -1,9 +1,9 @@
 const express = require('express');
-const foodsRouter = express.Router();
+const menuItemsRouter = express.Router();
 const controller = require('./menuItems.controller');
 const { body, validationResult } = require('express-validator');
 
-foodsRouter
+menuItemsRouter
     .get('/api/menuitems', controller.getAllMenuItems)
     .get('/api/menuitems/:id', controller.getOneMenuItem)
     // .post()
@@ -11,4 +11,4 @@ foodsRouter
     // .delete();
 
 
-module.exports = foodsRouter;
+module.exports = menuItemsRouter;

@@ -11,7 +11,7 @@ import {
     addToCart,
   } from '../Cart/cartSlice';
 
-export interface Food {
+export interface MenuItem {
     id: number;
     title: string;
     description: string;
@@ -19,14 +19,14 @@ export interface Food {
 }
 
 export interface CartItem {
-    menuItem: Food;
+    menuItem: MenuItem;
     quantity: number;
 }
 
 
 const TakeAway = () => {
     const dispatch = useDispatch();
-    const [foods, setFoods] = useState<Food[]>([]);
+    const [foods, setFoods] = useState<MenuItem[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

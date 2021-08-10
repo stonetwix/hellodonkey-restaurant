@@ -1,6 +1,6 @@
 import { CSSProperties, useEffect, useState } from 'react';
 import { Card, List, Row } from 'antd';
-import { Food } from '../Takeaway/TakeawayView';
+import { MenuItem } from '../Takeaway/TakeawayView';
 import { PlusCircleFilled } from '@ant-design/icons';
 import { Spinner } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
@@ -9,7 +9,7 @@ import { addToCart } from '../Cart/cartSlice';
 
 const LeftOverCardGrid = () => {
     const dispatch = useDispatch();
-    const [foods, setFoods] = useState<Food[]>([]);
+    const [foods, setFoods] = useState<MenuItem[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

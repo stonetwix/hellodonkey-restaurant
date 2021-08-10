@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { CartItem, Food } from '../Takeaway/TakeawayView';
+import { CartItem, MenuItem } from '../Takeaway/TakeawayView';
 
 export const slice = createSlice({
   name: 'cart',
@@ -7,6 +7,7 @@ export const slice = createSlice({
     //value: 0,
     cart: [],
     menuItems: [],
+    orders: [],
   },
   reducers: {
     increment: state => {
@@ -20,7 +21,7 @@ export const slice = createSlice({
       //state.value -= 1;
     },
     addToCart: (state, action) => {
-      const menuItem: Food = action.payload;
+      const menuItem: MenuItem = action.payload;
       let cartItems: CartItem[] = state.cart;
       const existingCartItems = cartItems.filter((item: CartItem) => item.menuItem.id === menuItem.id);
       if (existingCartItems.length === 0) {
@@ -40,7 +41,7 @@ export const slice = createSlice({
       const menuItemId = action.payload;
       let cartItems: CartItem[] = state.cart;
       (state.cart as CartItem[]) = cartItems.filter((item: CartItem) => item.menuItem.id !== menuItemId);
-    }
+    },
   },
 });
 

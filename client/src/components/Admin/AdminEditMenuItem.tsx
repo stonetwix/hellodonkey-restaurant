@@ -2,7 +2,7 @@ import { Button, Form, Input, InputNumber, Layout, message, Select } from "antd"
 import { CSSProperties, useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { useHistory, useLocation, withRouter } from "react-router-dom";
-import { Food } from "../Takeaway/TakeawayView";
+import { MenuItem } from "../Takeaway/TakeawayView";
 import SiderMenu from './Sider';
 
 const { Content } = Layout;
@@ -31,7 +31,7 @@ export const children: string[] = ['Vegan', 'Vegetarian', 'Lactose free', 'Glute
 const AdminEditMenuItem = () => {
     let location = useLocation();
     let history = useHistory();
-    const [menuItem, setMenuItem] = useState<Food>();
+    const [menuItem, setMenuItem] = useState<MenuItem>();
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
