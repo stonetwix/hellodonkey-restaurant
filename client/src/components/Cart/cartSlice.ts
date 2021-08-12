@@ -4,7 +4,6 @@ import { CartItem, MenuItem } from '../Takeaway/TakeawayView';
 export const slice = createSlice({
   name: 'cart',
   initialState: {
-    //value: 0,
     cart: [],
     menuItems: [],
     orders: [],
@@ -16,9 +15,6 @@ export const slice = createSlice({
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       //state.value += 1;
-    },
-    decrement: state => {
-      //state.value -= 1;
     },
     addToCart: (state, action) => {
       const menuItem: MenuItem = action.payload;
@@ -45,7 +41,7 @@ export const slice = createSlice({
   },
 });
 
-export const { increment, decrement, addToCart, changeCartItemQuantity, deleteCartItem } = slice.actions;
+export const { increment, addToCart, changeCartItemQuantity, deleteCartItem } = slice.actions;
 
 export const badgeCount = (state: any) => state.cart.cart.map((item: CartItem) => item.quantity).reduce((curr: number, acc: number) => curr + acc, 0);
 

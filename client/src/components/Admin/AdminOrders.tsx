@@ -6,9 +6,10 @@ import { useHistory } from "react-router-dom";
 import { MenuItem } from "../Takeaway/TakeawayView";
 import SiderMenu from './Sider';
 import {
+    getOrders,
     handleMarkAsPickedUpClick
 } from '../Admin/adminSlice';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export interface Order {
     id: string;
@@ -22,12 +23,11 @@ const { Content } = Layout;
 
 const AdminOrders = () => {
     const dispatch = useDispatch();
-    const [orders, setOrders] = useState([]);
+    const orders: Order[] = useSelector(getOrders);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function fetchData() {
-            setOrders(await getOrders());
             setLoading(false);
         }
         fetchData()
@@ -62,13 +62,13 @@ const AdminOrders = () => {
                 if (!record.isPickedUp) {
                     return (
                       <Space size="middle">
-                        <Button onClick={() => dispatch(handleMarkAsPickedUpClick(record.id))}>Mark as picked up</Button>
+                        <Button onClick={(e) => dispatch(handleMarkAsPickedUpClick(record.id))}>Mark as picked up</Button>
                       </Space>
                     )
                   } else {
                     return (
                       <Space size="middle">
-                        <CheckCircleFilled style={{ fontSize: '2rem', color: '#8FBC94', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}/>
+                        <CheckCircleFilled style={{ fontSize: '2rem', color: '#61C9A8', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}/>
                       </Space>
                     )
                 }
@@ -106,14 +106,14 @@ const contentContainerStyle: CSSProperties = {
     height: '100vh'
 }
 
-const getOrders = async () => {
-    try {
-        let response = await fetch('/api/orders');
-        if (response.ok) {
-          const data = await response.json();
-          return data;
-        }
-    } catch (error) {
-        console.error(error);
-    }
-}
+// const getOrders = async () => {
+//     try {
+//         let response = await fetch('/api/orders');
+//         if (response.ok) {
+//           const data = await response.json();
+//           return data;
+//         }
+//     } catch (error) {
+//         console.error(error);
+//     }
+// }
