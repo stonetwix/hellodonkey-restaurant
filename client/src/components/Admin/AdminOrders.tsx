@@ -2,7 +2,6 @@ import { CheckCircleFilled } from "@ant-design/icons";
 import { Layout, Table, Space, Button, } from "antd";
 import { CSSProperties, useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
 import { MenuItem } from "../Takeaway/TakeawayView";
 import SiderMenu from './Sider';
 import {
@@ -33,6 +32,7 @@ const AdminOrders = () => {
         fetchData()
     }, []);
 
+
     const columns = [
         {
             title: 'Order number',
@@ -62,7 +62,7 @@ const AdminOrders = () => {
                 if (!record.isPickedUp) {
                     return (
                       <Space size="middle">
-                        <Button onClick={(e) => dispatch(handleMarkAsPickedUpClick(record.id))}>Mark as picked up</Button>
+                        <Button onClick={() => dispatch(handleMarkAsPickedUpClick(record.id))}>Mark as picked up</Button>
                       </Space>
                     )
                   } else {

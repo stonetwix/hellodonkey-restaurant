@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { Order } from '../Admin/AdminOrders';
 
-const orders = [{
+const initialOrders = [{
   id: "123134324368",
   menuItem: "Cemitas",
   quantity: 2,
   created: "2021-09-10 17:45",
-  isPickedUp: true
+  isPickedUp: false
 },
 {
   id: "123134324369",
@@ -26,7 +26,7 @@ const orders = [{
 export const slice = createSlice({
   name: 'admin',
   initialState: {
-    orders: orders,
+    orders: initialOrders,
   },
   reducers: {
     // fetchOrders: async (state) => {
@@ -35,7 +35,7 @@ export const slice = createSlice({
 
     handleMarkAsPickedUpClick: (state, action) => {
       const pickedUpItem = action.payload;
-      state.orders = orders.map(item => item.id === pickedUpItem ? {...item, isPickedUp: true} : item);
+      state.orders = state.orders.map(item => item.id === pickedUpItem ? {...item, isPickedUp: true} : item);
       console.log(state.orders)
       console.log(pickedUpItem)
     }
