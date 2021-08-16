@@ -66,7 +66,7 @@ const AdminLeftovers = () => {
                         <List.Item actions={[
                             <Link to={'/admin/editleftover/' + item.id}>  
                                 <Button 
-                                    key="edit-post" 
+                                    key="edit" 
                                     style={editStyle}
                                     icon={<FormOutlined />}
                                 >
@@ -74,7 +74,7 @@ const AdminLeftovers = () => {
                                 </Button>
                             </Link>, 
                             <Button 
-                                key="delete-post" 
+                                key="delete" 
                                 onClick={() => {handleDelete(); successDelete();}}                                 
                                 style={deleteStyle}
                                 icon={<DeleteOutlined />}

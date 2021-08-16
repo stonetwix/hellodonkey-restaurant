@@ -1,4 +1,4 @@
-import { CheckCircleFilled } from "@ant-design/icons";
+import { CheckCircleFilled, DeleteOutlined, UndoOutlined } from "@ant-design/icons";
 import { Layout, Table, Space, Button, } from "antd";
 import { CSSProperties, useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
@@ -6,7 +6,8 @@ import { MenuItem } from "../Takeaway/TakeawayView";
 import SiderMenu from './Sider';
 import {
     getOrders,
-    handleMarkAsPickedUpClick
+    handleMarkAsPickedUpClick,
+    handleResetOrder
 } from '../Admin/adminSlice';
 import { useDispatch, useSelector } from "react-redux";
 
@@ -68,7 +69,23 @@ const AdminOrders = () => {
                   } else {
                     return (
                       <Space size="middle">
-                        <CheckCircleFilled style={{ fontSize: '2rem', color: '#61C9A8', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}/>
+                        <CheckCircleFilled style={{ fontSize: '2rem', color: '#61C9A8', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}/> 
+                        <Button 
+                            key="reset-order"
+                            onClick={() => dispatch(handleResetOrder(record.id))} 
+                            style={editStyle}
+                            icon={<UndoOutlined />}
+                        >
+                            reset
+                        </Button>
+                        <Button 
+                            key="delete-order" 
+                            onClick={() => {}}                                 
+                            style={deleteStyle}
+                            icon={<DeleteOutlined />}
+                        >
+                            delete
+                        </Button>
                       </Space>
                     )
                 }
@@ -104,6 +121,22 @@ const contentContainerStyle: CSSProperties = {
     padding: '5rem',
     background: '#fff',
     height: '100vh'
+}
+
+const deleteStyle: CSSProperties = {
+    color: '#F2545B',
+    backgroundColor: 'white',
+    border: 'none',
+    cursor: 'pointer',
+    boxShadow: 'none'
+}
+
+const editStyle: CSSProperties = {
+    backgroundColor: 'white',
+    color: '#474747',
+    border: 'none',
+    cursor: 'pointer',
+    boxShadow: 'none'
 }
 
 // const getOrders = async () => {

@@ -36,13 +36,15 @@ export const slice = createSlice({
     handleMarkAsPickedUpClick: (state, action) => {
       const pickedUpItem = action.payload;
       state.orders = state.orders.map(item => item.id === pickedUpItem ? {...item, isPickedUp: true} : item);
-      console.log(state.orders)
-      console.log(pickedUpItem)
+    },
+    handleResetOrder: (state, action) => {
+      const pickedUpItem = action.payload;
+      state.orders = state.orders.map(item => item.id === pickedUpItem ? {...item, isPickedUp: false} : item);
     }
   },
 });
 
-export const { handleMarkAsPickedUpClick } = slice.actions;
+export const { handleMarkAsPickedUpClick, handleResetOrder } = slice.actions;
 
 export const getOrders = (state: any) => state.admin.orders;
 
