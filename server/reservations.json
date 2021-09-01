@@ -1,0 +1,23 @@
+[{
+    "id": 1,
+    "date": "2021-09-10",
+    "time": "18:00",
+    "numberOfGuests": 2,
+    "reservationInformation": "Moa Stenqvist, moa@stonetwig.se, 0733422206",
+    "timeStamp": "2021-09-01"
+},
+{
+    "id": 2,
+    "date": "2021-09-20",
+    "time": "18:00",
+    "numberOfGuests": 2,
+    "reservationInformation": "Fredrik Ljungqvist, fredrik@junkan.se, 0700112233",
+    "timeStamp": "2021-09-02"
+},
+{
+    "date": "2021-09-22",
+    "time": "18:00",
+    "numberOfGuests": 2,
+    "reservationInformation": "Alexander Busck, alex@busck.se, 0700112233",
+    "timeStamp": "2021-09-03"
+}]

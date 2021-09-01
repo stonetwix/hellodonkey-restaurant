@@ -3,6 +3,7 @@ require('express-async-errors');
 const cookieSession = require('cookie-session');
 const menuItemsRouter = require('./menuItems/menuItems.router');
 const ordersRouter = require('./oders/orders.router');
+const reservationsRouter = require('./reservations/reservations.router');
 
 const app = express();
 const port = 3001;
@@ -10,6 +11,7 @@ const port = 3001;
 app.use(express.json());
 app.use(menuItemsRouter);
 app.use(ordersRouter);
+app.use(reservationsRouter);
 
 
 //error handler
