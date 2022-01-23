@@ -32,9 +32,6 @@ const Navigation = () => {
             <Link to="/leftovers" style={navItemStyle}>
               Leftovers
             </Link>
-            <Link to="/" style={navItemStyle}>
-              Contact
-            </Link>
             <Link to="/cart" style={{ color: "white" }}>
               <ShoppingCartOutlined
                 style={{ fontSize: "1.5rem", marginRight: "-0.3rem" }}
